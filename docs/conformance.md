@@ -5,6 +5,18 @@ on its root catalog and on every collection/sub-catalog (PORTO-CORE-006). Valida
 with `rashid@0.4.0` (`rashid check catalog --no-data --json`); `tests/test_portolan_conformance.py`
 runs the same check in CI and fails on any error finding not listed below.
 
+**Note on paths below (2026-11-20 root-catalog restructure):** every path in this
+document was written against the pre-restructure tree, where `catalog/` held only
+the 1st-edition Global Data catalog directly. That tree is now at
+`catalog/first-edition/`, with a new top-level `catalog/catalog.json` (the FTW
+root) above it. Every path below that starts with `features/`, `predictions/`,
+or `.portolan/` is relative to `catalog/first-edition/`, not to `catalog/`
+directly -- e.g. `predictions/vectors/collection.json` means
+`catalog/first-edition/predictions/vectors/collection.json`. `rashid`'s own
+`path` field in its findings already reflects this (it reports paths relative
+to the `rashid check catalog ...` target, which is unchanged: the whole
+`catalog/` tree, root and first-edition together).
+
 `--no-data` means partitioned-collection data checks (`PTL-DAT-*`) do not run against
 this local tree: `predictions/vectors/collection.json` and `predictions/vectors-test/fields-thinned/collection.json`
 both use an absolute `s3://` `partition:glob` (required since v0.3, PORTO-FMT-064),

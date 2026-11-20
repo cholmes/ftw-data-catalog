@@ -69,9 +69,9 @@
   "links": [
     {
       "rel": "root",
-      "href": "../../../catalog.json",
+      "href": "../../../../catalog.json",
       "type": "application/json",
-      "title": "Fields of the World — Global"
+      "title": "Fields of the World"
     },
     {
       "rel": "parent",

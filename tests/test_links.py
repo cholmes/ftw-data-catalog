@@ -13,8 +13,8 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1] / "catalog"
 
-# catalog/features/<year>/collection.json -> ./<utm zone>/catalog.json (generated to S3)
-GENERATED_TREE = (re.compile(r"^features/(2024|2025)/collection\.json$"),
+# catalog/first-edition/features/<year>/collection.json -> ./<utm zone>/catalog.json (generated to S3)
+GENERATED_TREE = (re.compile(r"^first-edition/features/(2024|2025)/collection\.json$"),
                   re.compile(r"^\./[0-6][0-9]/catalog\.json$"))
 
 def stac_json_files():

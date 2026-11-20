@@ -1,0 +1,116 @@
+{
+  "type": "Catalog",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
+  ],
+  "id": "ftw",
+  "title": "Fields of the World",
+  "description": "The entry point to every Fields of the World dataset. Fields of the World (FTW) is an open collaboration on agricultural field boundaries: it harmonizes field boundary data that governments and research institutions already publish, cuts machine-learning benchmark data from it, and publishes global field boundary predictions made with models trained on that benchmark. This catalog holds no data of its own. It links to four published catalogs: **Fields of the World — Global Data (1st Edition)**, the original global field-boundary predictions and prediction-quality layers at 10 m resolution, kept as a sub-catalog of this same repository and product; **Fields of the World — Global Data**, the 2nd Edition of those predictions, maintained and published separately; **Fields of the World Benchmark Data**, the Sentinel-2 image chips paired with instance and semantic label masks that models train and evaluate on, in train, validation and test splits; and **Harmonized Field Boundary Data**, the source field boundary datasets from agricultural subsidy registers (IACS/LPIS), cadastres, statistics and mapping programmes, and from research institutions, converted to the [fiboa](https://fiboa.org/) schema and republished as cloud-native GeoParquet and PMTiles. The predictions are model output describing remote-sensing field units, not cadastral or legal parcels and not a land-tenure product. Each collection in each child catalog carries its own license and providers, which are authoritative; see this catalog's [README](./README.md). Project home: <https://fieldsofthe.world>.",
+  "keywords": [
+    "agriculture",
+    "field boundaries",
+    "parcels",
+    "crops",
+    "land use",
+    "machine learning",
+    "benchmark",
+    "fiboa",
+    "sentinel-2",
+    "global"
+  ],
+  "providers": [
+    {
+      "name": "Fields of the World",
+      "description": "The collaboration that harmonizes, builds and publishes the datasets this catalog links to. Each collection names the organization that produced its own data.",
+      "roles": [
+        "producer",
+        "processor"
+      ],
+      "url": "https://fieldsofthe.world"
+    },
+    {
+      "name": "Source Cooperative",
+      "description": "Hosts the published catalogs and their data under the ftw organization.",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/ftw"
+    }
+  ],
+  "git:repository": "https://github.com/fieldsoftheworld/ftw-data-catalog",
+  "git:ref": "main",
+  "git:provider": "github",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/ftw/global-data/catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Catalog README"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Catalog agent guide"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "icon",
+      "href": "./_assets/ftw-logo.svg",
+      "type": "image/svg+xml",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "child",
+      "href": "./first-edition/catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World — Global Data (1st Edition)"
+    },
+    {
+      "rel": "child",
+      "href": "https://data.source.coop/ftw/global-data-2e/catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World — Global Data"
+    },
+    {
+      "rel": "child",
+      "href": "https://data.source.coop/ftw/benchmark-data/catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World Benchmark Data"
+    },
+    {
+      "rel": "child",
+      "href": "https://data.source.coop/ftw/harmonized-field-data/catalog.json",
+      "type": "application/json",
+      "title": "Harmonized Field Boundary Data"
+    },
+    {
+      "rel": "vcs",
+      "href": "https://github.com/fieldsoftheworld/ftw-data-catalog",
+      "title": "Source repository"
+    },
+    {
+      "rel": "issues",
+      "href": "https://github.com/fieldsoftheworld/ftw-data-catalog/issues",
+      "title": "Issue tracker"
+    }
+  ]
+}

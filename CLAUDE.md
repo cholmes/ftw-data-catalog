@@ -14,10 +14,31 @@ or uploaded by this repo.
 - Source Cooperative serves the public `ftw/global-data` path from the `tge-labs/...` prefix.
 
 ## Layout
+
+**Since 2026-11-20 this repo is also the FTW root catalog repo**, not only the
+1st-edition Global Data catalog. `catalog/catalog.json` is now the top-level
+`ftw` root (links out to the 1st Edition, the 2nd Edition at
+`global-data-2e`, Benchmark Data, and Harmonized Field Boundary Data). The
+entire former contents of `catalog/` — the 1st-edition Global Data catalog
+itself — moved down one level to `catalog/first-edition/` (pure `git mv`;
+every relative link inside it is unaffected since the whole subtree shifted
+uniformly — see `scripts/migrate/fix_root_links.py`'s docstring for why).
+`publish.yaml`'s `publish_dir: catalog` is unchanged: it now syncs the root
+*and* `first-edition/` together, 1:1, to the same bucket prefix, which is
+exactly what puts the new root at `.../global-data/catalog.json` and the 1st
+Edition at `.../global-data/first-edition/catalog.json`.
+
 - `catalog/` — the published catalog (STAC JSON, README.md, llms.txt, thumbnails, `.portolan/metadata.yaml`). Synced 1:1 to S3.
+  - `catalog/catalog.json`, `README.md`, `AGENTS.md`, `llms.txt`, `_assets/` — the FTW root.
+  - `catalog/first-edition/` — the 1st Edition Global Data catalog (what used to be all of `catalog/`).
 - `staging/` — collections being prepared; git-tracked but NOT published.
 - `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, root `README.md`, `catalog.publish.yaml` — tooling/docs, never published.
 - Gitignored (never in repo): data files (`*.tif`, `*.parquet`, `*.zarr`), `.env`, caches.
+
+**Eventual plan, not yet done:** the 1st Edition content in `catalog/first-edition/`
+is expected to move into the `ftw-global-data-catalog` repo (the 2nd Edition's own),
+so the whole Global Data history lives in one repository. Written down here and in
+`catalog/README.md`/`AGENTS.md` so it isn't lost.
 
 ## READMEs
 - Root `README.md` — GitHub front door (not published).
@@ -48,8 +69,10 @@ plain recursive listing of `write_prefix` would walk every zarr chunk and COG sh
 
 ## Add / promote a collection
 1. Build it under `staging/<group>/<name>/` (collection.json + `.portolan/metadata.yaml`); hrefs use the public base.
-2. When ready: `git mv staging/<group>/<name> catalog/<group>/<name>`.
-3. Add a `child` link to `catalog/catalog.json`.
+2. When ready: `git mv staging/<group>/<name> catalog/first-edition/<group>/<name>` (a new
+   Global Data collection belongs under the 1st-edition tree, not the new root).
+3. Add a `child` link to `catalog/first-edition/catalog.json`, not the top-level `catalog/catalog.json`
+   (that one only links to the four root-level catalogs).
 4. `python3 tests/test_links.py && python3 scripts/catalog/publish.py` to verify.
 
 ## Tests (dependency-free; run with python3)
@@ -153,5 +176,7 @@ target; catalog metadata via `scripts/catalog/publish.py` as above (direct s3 cp
 committed catalog files is byte-equivalent and publish.py will skip them).
 
 ## Git extension (portolan-cli#485)
-`catalog/catalog.json` hand-carries `git:repository`, `git:ref`, `git:provider` plus `vcs`/`issues`
-links, pending CLI support. These are non-spec extras (0.1 defines no git extension); rashid ignores them.
+Both `catalog/catalog.json` (the FTW root) and `catalog/first-edition/catalog.json` hand-carry
+`git:repository`, `git:ref`, `git:provider` plus `vcs`/`issues` links, pending CLI support (both
+are maintained in this one repository). These are non-spec extras; rashid ignores them.
+`tests/test_git_ext.py` only checks the top-level `catalog/catalog.json`.

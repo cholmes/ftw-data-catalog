@@ -10,9 +10,15 @@
   "links": [
     {
       "rel": "root",
-      "href": "./catalog.json",
+      "href": "../catalog.json",
       "type": "application/json",
-      "title": "Fields of the World — Global Data (1st Edition)"
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
     },
     {
       "rel": "icon",

@@ -1,0 +1,28 @@
+# Fields of the World
+
+> The entry point to every Fields of the World (FTW) dataset: an open collaboration on agricultural
+> field boundaries that harmonizes government/research field boundary data, cuts machine-learning
+> benchmark data from it, and publishes global field boundary predictions made with models trained
+> on that benchmark.
+
+This catalog holds no data of its own. It is a root with four `child` links:
+
+| Catalog | Root | What it holds |
+|---|---|---|
+| Fields of the World — Global Data (1st Edition) | `./first-edition/catalog.json` | The original global field-boundary predictions and prediction-quality layers at 10 m resolution. Superseded by the 2nd Edition; kept published at its existing URLs. See its own `llms.txt` at `./first-edition/llms.txt`. |
+| Fields of the World — Global Data | `https://data.source.coop/ftw/global-data-2e/catalog.json` | The 2nd (current) Edition of the global predictions. |
+| Fields of the World Benchmark Data | `https://data.source.coop/ftw/benchmark-data/catalog.json` | Training/evaluation chips for field boundary delineation models. |
+| Harmonized Field Boundary Data | `https://data.source.coop/ftw/harmonized-field-data/catalog.json` | Source field boundary datasets, harmonized to the fiboa schema. |
+
+**Read the child catalog's own `llms.txt`/`AGENTS.md` before querying it.** This file does not
+restate per-collection queries, column names, or partition globs — those are written and run
+against each child's own files, and a copy here would go stale.
+
+Eventual plan (not yet done): the 1st Edition's content is expected to move into the 2nd
+Edition's own repository (ftw-global-data-catalog), so the whole Global Data history lives in
+one place. Until then it stays a sub-catalog of this root, at `./first-edition/`.
+
+Do not sum field/polygon counts across the four catalogs, or across the two Global Data editions —
+each is an independent dataset or an independent full-world run, and summing double-counts.
+
+Source: https://github.com/fieldsoftheworld/ftw-data-catalog — corrections welcome as PRs.

@@ -60,22 +60,27 @@ import sys
 from pathlib import Path
 
 CATALOG = Path(__file__).resolve().parents[1] / "catalog"
-DEFERRED_DIRS = ("features/zarr", "predictions/zarr")
+# All paths below are relative to CATALOG (i.e. to the rashid --no-data target),
+# which since the root-catalog restructure is the *whole* tree: the new FTW
+# root catalog.json plus catalog/first-edition/ (the former catalog/ root,
+# moved one level deeper — see scripts/migrate/fix_root_links.py). Every path
+# that used to be relative to the old root now starts with "first-edition/".
+DEFERRED_DIRS = ("first-edition/features/zarr", "first-edition/predictions/zarr")
 FILE_FIELD_RULES = {"PTL-AST-003", "PTL-AST-004"}
 
 # PTL-LNK-006 is accepted only on these two shapes — never blanket, or a genuinely
 # broken structural link elsewhere would sail through. See the module docstring.
-GRID_PARENT_RE = re.compile(r"^features/(2024|2025)/collection\.json$")
+GRID_PARENT_RE = re.compile(r"^first-edition/features/(2024|2025)/collection\.json$")
 # PTL-COL-005 and PTL-AST-007 both ride on the same S3-only-items fact, on the
 # same two files.
 MIRROR_WITHOUT_ITEMS_RE = GRID_PARENT_RE
 GRID_CHILD_RE = re.compile(r"^\./[0-6][0-9]/catalog\.json$")
-SUBDIVISION_RE = re.compile(r"^predictions/vectors/.*/results-by-admin")
+SUBDIVISION_RE = re.compile(r"^first-edition/predictions/vectors/.*/results-by-admin")
 # PTL-AST-008: scoped to exactly the two country-wide PMTiles overview items
 # that have no single consolidated GeoParquet file to reference. See the
 # module docstring and docs/conformance.md.
 OVERVIEW_ITEM_NO_DATA_RE = re.compile(
-    r"^predictions/vectors/alpha/results-by-admin-conf/"
+    r"^first-edition/predictions/vectors/alpha/results-by-admin-conf/"
     r"admin:country_code=(BR|US)/(BR|US)\.json$")
 
 
