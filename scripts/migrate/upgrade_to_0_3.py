@@ -7,9 +7,14 @@ the historical 0.1 and 0.2 sweeps and still run first:
     python3 scripts/migrate/upgrade_to_0_1.py
     python3 scripts/migrate/upgrade_to_0_2.py
     python3 scripts/migrate/upgrade_to_0_3.py
+    python3 scripts/migrate/switch_to_data_proxy.py
     python3 scripts/migrate/backfill_file_meta.py --local-only
 
-Idempotent: running it twice changes nothing the second time.
+Idempotent: running it twice changes nothing the second time. Its S3_BASE
+constant writes the raw dotted bucket (``us-west-2.opendata.source.coop/...``);
+``switch_to_data_proxy.py`` is the later pass that rewrites it to the Source
+Cooperative data proxy form (``s3://ftw/global-data/...``) and run after this
+one, not a reason to change this constant retroactively.
 
 What it does
 ------------

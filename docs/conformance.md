@@ -12,6 +12,29 @@ which a local run cannot list. A clean local run says nothing about the partitio
 files themselves; see `scripts/migrate/reference/validate_with_data.py`-style
 symlink-tree validation (not run in this pass) for that.
 
+## Data proxy switch (2026-11-20)
+
+`partition:glob` on both partitioned collections now uses the Source Cooperative
+[data proxy](https://docs.source.coop/data-proxy) (`s3://ftw/global-data/...`)
+instead of the raw dotted AWS bucket (`s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data/...`).
+Both collections gained a `storage:schemes` entry (STAC storage extension
+v2.0.0, `type: custom-s3`) since `s3://ftw` is not a real AWS bucket
+(PORTO-FMT-066). Verified live, 2026-11-20:
+
+- Anonymous `ListObjectsV2` against the proxy:
+  `curl 'https://data.source.coop/ftw?list-type=2&prefix=global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=FR/&max-keys=5'`
+  returned the 5 expected per-partition keys.
+- DuckDB `glob()` through `ENDPOINT 'data.source.coop'`, `URL_STYLE 'path'`
+  against the full wildcard `partition:glob` pattern matched exactly 598
+  files — the same count this catalog already has items for.
+- Ran the catalog's own documented query (`predictions/vectors` README,
+  France partition, `confidence >= 80`) end to end through the proxy:
+  4,469,306 of 5,290,967 rows matched. Not a sample — the full partition.
+- `s3fs.S3FileSystem(anon=True, endpoint_url="https://data.source.coop").ls(...)`
+  listed the `features/zarr` and `predictions/zarr` Zarr stores through the
+  proxy too, so the README's `xr.open_zarr(..., storage_options=...)` examples
+  (also switched) resolve the same way.
+
 ## Accepted / deferred findings
 
 | Rule | Where | Why | Tracking |

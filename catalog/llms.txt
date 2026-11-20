@@ -18,8 +18,9 @@ This file describes the dataset for machines and assistants. The repository host
 catalog is being built incrementally; it currently covers the **prediction confidence & quality
 layers** and will expand to the other products.
 
-Storage note: the public URL base is `https://data.source.coop/ftw/global-data/`, physically backed by
-the S3 prefix `s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data/` (anonymous read).
+Storage note: the public URL base is `https://data.source.coop/ftw/global-data/`, also reachable via
+the Source Cooperative data proxy (https://docs.source.coop/data-proxy) as `s3://ftw/global-data/`
+(anonymous read; DuckDB: `ENDPOINT 'data.source.coop'`, `URL_STYLE 'path'`).
 
 ## Key facts
 

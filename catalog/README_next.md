@@ -32,8 +32,9 @@ Paper: Robinson et al. 2026, *The first global agricultural field boundary map a
   build interactive maps, or generate charts. Each collection also has its own `llms.txt`.
 - **Source repository:** <https://github.com/fieldsoftheworld/ftw-data-catalog>
 
-Storage: the public URL base `https://data.source.coop/ftw/global-data/` is physically backed by
-`s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data/` (anonymous read).
+Storage: the public URL base `https://data.source.coop/ftw/global-data/` is also reachable via the
+[Source Cooperative data proxy](https://docs.source.coop/data-proxy) as `s3://ftw/global-data/`
+(anonymous read; same bytes, same key paths — the proxy presents this product as bucket `ftw`).
 
 ## Collections
 
@@ -80,7 +81,11 @@ import duckdb
 
 con = duckdb.connect()
 con.execute("INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;")
-base = "s3://us-west-2.opendata.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf"
+# Source Cooperative data proxy (https://docs.source.coop/data-proxy): anonymous,
+# path-style, bucket named after the account.
+con.execute("CREATE SECRET ftw_proxy (TYPE s3, ENDPOINT 'data.source.coop', "
+            "URL_STYLE 'path', REGION 'us-west-2');")
+base = "s3://ftw/global-data/predictions/vectors/alpha/results-by-admin-conf"
 con.execute(f"""
 SELECT id, EXTRACT(year FROM "determination:datetime") AS year,
        confidence, "metrics:area" AS area_m2, geometry
@@ -127,7 +132,8 @@ import rasterix
 import xarray as xr
 
 features = xr.open_zarr(
-    "s3://us-west-2.opendata.source.coop/ftw/global-data/features/zarr/alpha/global.zarr"
+    "s3://ftw/global-data/features/zarr/alpha/global.zarr",
+    storage_options={"endpoint_url": "https://data.source.coop", "anon": True},
 ).pipe(rasterix.assign_index)
 ```
 
@@ -142,7 +148,8 @@ it can be read at any zoom and tiled for web display, not just subset analytical
 
 ```python
 predictions = xr.open_zarr(
-    "s3://us-west-2.opendata.source.coop/ftw/global-data/predictions/zarr/alpha/global.zarr",
+    "s3://ftw/global-data/predictions/zarr/alpha/global.zarr",
+    storage_options={"endpoint_url": "https://data.source.coop", "anon": True},
     group="64x",  # omit for full 10 m resolution
 ).pipe(rasterix.assign_index)
 ```

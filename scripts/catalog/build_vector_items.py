@@ -47,11 +47,26 @@ PARTITION_EXT = "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/sc
 # so emitting it here keeps a regeneration from silently dropping it (which is
 # exactly what happened once — see scripts/migrate/upgrade_to_0_2.py).
 PORTOLAN_EXT = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
-# s3:// mirrors HTTPS_BASE/COLLECTION_HREF 1:1 (same bucket, same keys — see
-# scripts/catalog/publish_metadata.sh). partition:glob MUST use a bucket-native,
-# listable scheme (PORTO-FMT-064); a data asset's href MUST NOT contain a glob
-# (PORTO-FMT-065), so the glob lives only in partition:glob, never in `assets`.
-S3_BASE = "s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data"
+# The Source Cooperative data proxy (https://docs.source.coop/data-proxy):
+# same bucket/keys as PUBLIC_BASE/COLLECTION_HREF, reached as if it were an
+# S3 bucket named after the account. Verified live (2026-11-20): anonymous
+# ListObjectsV2 against https://data.source.coop/ftw?list-type=2&prefix=...
+# and a DuckDB glob() through ENDPOINT 'data.source.coop' both matched the
+# same 598 partitions this generator emits items for. partition:glob MUST use
+# a bucket-native, listable scheme (PORTO-FMT-064); a data asset's href MUST
+# NOT contain a glob (PORTO-FMT-065), so the glob lives only in
+# partition:glob, never in `assets`. Not an AWS bucket (PORTO-FMT-066), so
+# STORAGE_SCHEME below is declared alongside it.
+S3_BASE = "s3://ftw/global-data"
+STORAGE_EXT = "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+STORAGE_SCHEME = {
+    "type": "custom-s3",
+    "title": "Source Cooperative data proxy (anonymous read)",
+    "platform": "https://data.source.coop",
+    "bucket": "ftw",
+    "region": "us-west-2",
+    "requester_pays": False,
+}
 
 # Field-definition specs (linked in each column description + via `describedby`).
 FIBOA_CORE = "https://github.com/fiboa/specification/blob/main/core/README.md"
@@ -389,7 +404,7 @@ def build_collection(item_links, child_links):
         "type": "Collection",
         "stac_version": "1.1.0",
         "stac_extensions": [PORTOLAN_EXT, PROJ_EXT, VECTOR_EXT, TABLE_EXT, SCI_EXT,
-                            PARTITION_EXT],
+                            PARTITION_EXT, STORAGE_EXT],
         # the Portolan browser reads this list to populate the style picker
         "portolan:styles": ["styles/2025", "styles/2024",
                             "styles/confidence-2025", "styles/confidence-2024"],
@@ -432,6 +447,8 @@ def build_collection(item_links, child_links):
         # PORTO-FMT-064: absolute, bucket-native, listable scheme — not the
         # https:// COLLECTION_HREF form, which a client can't list to expand.
         "partition:glob": f"{S3_BASE}/{DATA_REL}/admin:country_code=*/*.parquet",
+        # PORTO-FMT-066: s3://ftw is the data proxy, not a real AWS bucket.
+        "storage:schemes": {"ftw-proxy": STORAGE_SCHEME},
         "links": links,
         "assets": {
             # No `data` asset here: PORTO-FMT-065 forbids a glob in an asset

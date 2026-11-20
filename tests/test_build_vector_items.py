@@ -97,9 +97,12 @@ def test_build_collection_has_glob_and_two_pmtiles_and_styles():
     # asset href) over results-by-admin-conf, s3:// so clients can list it
     # (PORTO-FMT-064)
     glob = col["partition:glob"]
-    assert glob.startswith("s3://")
+    assert glob.startswith("s3://ftw/global-data/")  # the data proxy, not a raw AWS bucket
     assert "results-by-admin-conf" in glob and glob.endswith("*.parquet")
     assert "data" not in col["assets"]
+    # PORTO-FMT-066: s3://ftw isn't a real AWS bucket, so storage:schemes must say so
+    assert any("storage" in e for e in col["stac_extensions"])
+    assert col["storage:schemes"]["ftw-proxy"]["bucket"] == "ftw"
     # two visual pmtiles, default flagged on the 2025 one
     assert "pmtiles_2025" in col["assets"] and "pmtiles_2024_confidence" in col["assets"]
     # two style assets with role style

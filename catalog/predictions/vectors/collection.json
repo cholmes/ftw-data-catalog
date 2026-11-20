@@ -9,7 +9,8 @@
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
     "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
-    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
   ],
   "portolan:styles": [
     "styles/2025",
@@ -1643,5 +1644,15 @@
     }
   },
   "updated": "2026-09-03T22:46:37Z",
-  "partition:glob": "s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=*/*.parquet"
+  "partition:glob": "s3://ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=*/*.parquet",
+  "storage:schemes": {
+    "ftw-proxy": {
+      "type": "custom-s3",
+      "title": "Source Cooperative data proxy (anonymous read)",
+      "platform": "https://data.source.coop",
+      "bucket": "ftw",
+      "region": "us-west-2",
+      "requester_pays": false
+    }
+  }
 }
