@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./NG_KN.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_KN.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Nigeria — Kano field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (2,813,855 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./NG_KN.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_KN.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Nigeria — Kano field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

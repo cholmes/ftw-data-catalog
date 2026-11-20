@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_PE.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_PE.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — Pernambuco field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (3,867,484 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_PE.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_PE.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — Pernambuco field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

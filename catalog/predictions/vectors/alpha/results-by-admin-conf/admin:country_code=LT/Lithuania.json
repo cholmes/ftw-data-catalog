@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Lithuania.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LT/Lithuania.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Lithuania field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (392,737 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Lithuania.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LT/Lithuania.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Lithuania field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./IN_GJ.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_GJ.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "India — Gujarāt field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (34,624,614 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./IN_GJ.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_GJ.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "India — Gujarāt field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

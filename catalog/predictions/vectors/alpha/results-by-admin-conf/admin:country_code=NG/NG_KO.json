@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./NG_KO.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_KO.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Nigeria — Kogi field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (3,188,019 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./NG_KO.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_KO.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Nigeria — Kogi field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

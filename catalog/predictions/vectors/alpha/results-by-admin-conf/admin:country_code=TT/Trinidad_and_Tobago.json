@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Trinidad_and_Tobago.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TT/Trinidad_and_Tobago.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Trinidad and Tobago field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (244,734 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Trinidad_and_Tobago.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TT/Trinidad_and_Tobago.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Trinidad and Tobago field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

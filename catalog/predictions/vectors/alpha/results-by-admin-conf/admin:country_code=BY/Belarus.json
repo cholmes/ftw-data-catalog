@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Belarus.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BY/Belarus.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Belarus field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (451,664 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Belarus.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BY/Belarus.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Belarus field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

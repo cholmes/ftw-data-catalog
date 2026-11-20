@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Belgium.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BE/Belgium.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Belgium field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (400,704 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Belgium.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BE/Belgium.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Belgium field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

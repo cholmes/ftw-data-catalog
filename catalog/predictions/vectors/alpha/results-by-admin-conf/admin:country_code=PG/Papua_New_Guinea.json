@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Papua_New_Guinea.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PG/Papua_New_Guinea.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Papua New Guinea field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,470,928 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Papua_New_Guinea.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PG/Papua_New_Guinea.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Papua New Guinea field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

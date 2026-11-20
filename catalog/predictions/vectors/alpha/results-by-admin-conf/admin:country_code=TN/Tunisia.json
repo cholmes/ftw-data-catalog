@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Tunisia.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TN/Tunisia.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Tunisia field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (3,370,884 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Tunisia.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TN/Tunisia.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Tunisia field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

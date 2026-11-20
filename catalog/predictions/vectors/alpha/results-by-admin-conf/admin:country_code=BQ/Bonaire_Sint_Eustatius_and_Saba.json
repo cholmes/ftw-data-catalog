@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Bonaire_Sint_Eustatius_and_Saba.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BQ/Bonaire_Sint_Eustatius_and_Saba.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Bonaire Sint Eustatius and Saba field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,672 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Bonaire_Sint_Eustatius_and_Saba.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BQ/Bonaire_Sint_Eustatius_and_Saba.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Bonaire Sint Eustatius and Saba field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

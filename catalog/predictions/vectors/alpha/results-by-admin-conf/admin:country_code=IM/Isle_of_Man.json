@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Isle_of_Man.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IM/Isle_of_Man.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Isle of Man field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (8,975 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Isle_of_Man.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IM/Isle_of_Man.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Isle of Man field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

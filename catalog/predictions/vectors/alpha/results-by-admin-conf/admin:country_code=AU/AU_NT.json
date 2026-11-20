@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./AU_NT.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AU/AU_NT.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Australia — Northern Territory field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (10,371,701 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./AU_NT.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AU/AU_NT.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Australia — Northern Territory field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

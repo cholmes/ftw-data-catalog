@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Saint_Vincent_and_the_Grenadines.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=VC/Saint_Vincent_and_the_Grenadines.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Saint Vincent and the Grenadines field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (7,705 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Saint_Vincent_and_the_Grenadines.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=VC/Saint_Vincent_and_the_Grenadines.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Saint Vincent and the Grenadines field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

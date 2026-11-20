@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./AU_QLD.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AU/AU_QLD.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Australia — Queensland field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (25,243,571 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./AU_QLD.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AU/AU_QLD.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Australia — Queensland field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

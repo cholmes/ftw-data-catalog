@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Hungary.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=HU/Hungary.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Hungary field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (493,026 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Hungary.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=HU/Hungary.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Hungary field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

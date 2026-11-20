@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Jamaica.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=JM/Jamaica.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Jamaica field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (638,929 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Jamaica.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=JM/Jamaica.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Jamaica field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

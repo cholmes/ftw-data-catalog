@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_SP.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_SP.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — São Paulo field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,103,245 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_SP.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_SP.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — São Paulo field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

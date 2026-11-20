@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Sierra_Leone.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SL/Sierra_Leone.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Sierra Leone field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (2,185,479 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Sierra_Leone.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SL/Sierra_Leone.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Sierra Leone field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

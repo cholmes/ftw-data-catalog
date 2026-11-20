@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./ET_AA.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_AA.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Ethiopia — Addis Ababa field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (36,413 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./ET_AA.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_AA.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Ethiopia — Addis Ababa field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

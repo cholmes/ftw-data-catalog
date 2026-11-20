@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Afghanistan.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AF/Afghanistan.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Afghanistan field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (26,488,298 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Afghanistan.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AF/Afghanistan.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Afghanistan field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

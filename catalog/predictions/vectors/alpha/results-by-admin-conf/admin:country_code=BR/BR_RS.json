@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_RS.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_RS.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — Rio Grande do Sul field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,343,701 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_RS.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_RS.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — Rio Grande do Sul field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

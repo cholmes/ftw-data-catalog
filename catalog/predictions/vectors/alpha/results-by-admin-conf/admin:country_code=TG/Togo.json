@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Togo.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TG/Togo.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Togo field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (10,915,754 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Togo.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TG/Togo.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Togo field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Syria.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SY/Syria.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Syrian Arab Republic field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (3,301,129 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Syria.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SY/Syria.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Syrian Arab Republic field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

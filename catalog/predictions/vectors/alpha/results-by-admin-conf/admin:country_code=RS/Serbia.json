@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Serbia.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=RS/Serbia.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Serbia field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (2,403,665 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Serbia.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=RS/Serbia.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Serbia field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

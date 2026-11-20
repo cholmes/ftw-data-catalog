@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_GUA.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_GUA.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BR_GUA field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (16 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_GUA.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_GUA.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BR_GUA field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

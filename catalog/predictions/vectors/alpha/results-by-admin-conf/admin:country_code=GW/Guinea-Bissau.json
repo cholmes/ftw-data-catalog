@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Guinea-Bissau.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=GW/Guinea-Bissau.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Guinea-Bissau field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (3,406,286 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Guinea-Bissau.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=GW/Guinea-Bissau.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Guinea-Bissau field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

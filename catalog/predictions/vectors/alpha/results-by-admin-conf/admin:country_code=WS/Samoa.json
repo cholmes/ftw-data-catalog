@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Samoa.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=WS/Samoa.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Samoa field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (19,077 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Samoa.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=WS/Samoa.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Samoa field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

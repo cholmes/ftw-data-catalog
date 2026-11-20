@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./IN_BR.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_BR.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "India — Bihār field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (32,613,273 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./IN_BR.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_BR.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "India — Bihār field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

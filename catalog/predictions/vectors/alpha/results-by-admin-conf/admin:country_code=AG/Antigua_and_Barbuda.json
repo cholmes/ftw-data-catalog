@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Antigua_and_Barbuda.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AG/Antigua_and_Barbuda.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Antigua and Barbuda field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (8,609 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Antigua_and_Barbuda.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AG/Antigua_and_Barbuda.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Antigua and Barbuda field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

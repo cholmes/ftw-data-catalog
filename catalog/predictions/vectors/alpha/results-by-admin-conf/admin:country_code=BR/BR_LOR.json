@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_LOR.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_LOR.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BR_LOR field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (42 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_LOR.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_LOR.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BR_LOR field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

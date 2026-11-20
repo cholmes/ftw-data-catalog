@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Austria.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AT/Austria.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Austria field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (900,048 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Austria.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AT/Austria.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Austria field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Cayman_Islands.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KY/Cayman_Islands.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Cayman Islands field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (163 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Cayman_Islands.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KY/Cayman_Islands.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Cayman Islands field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

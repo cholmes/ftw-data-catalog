@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./AU_VIC.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AU/AU_VIC.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Australia — Victoria field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (668,718 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./AU_VIC.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AU/AU_VIC.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Australia — Victoria field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Senegal.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SN/Senegal.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Senegal field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (12,664,725 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Senegal.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SN/Senegal.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Senegal field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

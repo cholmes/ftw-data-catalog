@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Turkmenistan.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TM/Turkmenistan.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Turkmenistan field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (3,152,565 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Turkmenistan.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TM/Turkmenistan.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Turkmenistan field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./IN_CG.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_CG.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "India — Chhattīsgarh field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (29,072,791 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./IN_CG.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_CG.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "India — Chhattīsgarh field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./PK_KP.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PK/PK_KP.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Pakistan — Khyber Pakhtunkhwa field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (7,353,757 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./PK_KP.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PK/PK_KP.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Pakistan — Khyber Pakhtunkhwa field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

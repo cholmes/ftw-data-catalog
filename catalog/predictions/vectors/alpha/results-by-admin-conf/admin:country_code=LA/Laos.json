@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Laos.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LA/Laos.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Lao People's Democratic Republic field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (10,439,733 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Laos.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LA/Laos.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Lao People's Democratic Republic field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

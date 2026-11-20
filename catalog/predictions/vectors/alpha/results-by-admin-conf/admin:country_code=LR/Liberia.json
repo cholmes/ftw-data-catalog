@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Liberia.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LR/Liberia.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Liberia field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (498,627 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Liberia.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LR/Liberia.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Liberia field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

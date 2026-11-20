@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Bolivia.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BO/Bolivia.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Bolivia, Plurinational State of field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (12,728,624 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Bolivia.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BO/Bolivia.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Bolivia, Plurinational State of field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

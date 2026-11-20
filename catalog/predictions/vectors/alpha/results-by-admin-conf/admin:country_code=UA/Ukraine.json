@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Ukraine.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=UA/Ukraine.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Ukraine field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (4,116,875 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Ukraine.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=UA/Ukraine.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Ukraine field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

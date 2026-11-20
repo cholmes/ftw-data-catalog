@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./NG_PL.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_PL.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Nigeria — Plateau field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (4,557,756 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./NG_PL.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_PL.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Nigeria — Plateau field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

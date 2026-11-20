@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Åland_Islands.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AX/Åland_Islands.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Åland Islands field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (6,419 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Åland_Islands.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=AX/Åland_Islands.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Åland Islands field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

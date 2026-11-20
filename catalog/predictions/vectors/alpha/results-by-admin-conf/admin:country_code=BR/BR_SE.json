@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_SE.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_SE.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — Sergipe field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,210,455 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_SE.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_SE.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — Sergipe field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

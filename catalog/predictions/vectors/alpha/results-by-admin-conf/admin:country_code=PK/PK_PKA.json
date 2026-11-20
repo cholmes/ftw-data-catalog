@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./PK_PKA.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PK/PK_PKA.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "PK_PKA field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (268 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./PK_PKA.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PK/PK_PKA.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "PK_PKA field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

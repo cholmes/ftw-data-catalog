@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Saint_Kitts_and_Nevis.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KN/Saint_Kitts_and_Nevis.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Saint Kitts and Nevis field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (6,621 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Saint_Kitts_and_Nevis.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KN/Saint_Kitts_and_Nevis.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Saint Kitts and Nevis field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

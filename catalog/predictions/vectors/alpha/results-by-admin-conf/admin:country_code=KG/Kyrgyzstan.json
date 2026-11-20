@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Kyrgyzstan.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KG/Kyrgyzstan.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Kyrgyzstan field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,461,826 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Kyrgyzstan.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KG/Kyrgyzstan.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Kyrgyzstan field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

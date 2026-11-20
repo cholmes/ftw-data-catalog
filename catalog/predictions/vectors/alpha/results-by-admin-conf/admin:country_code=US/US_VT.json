@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./US_VT.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=US/US_VT.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "United States — Vermont field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (19,270 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./US_VT.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=US/US_VT.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "United States — Vermont field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

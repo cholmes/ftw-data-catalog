@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./TZ_C.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_C.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "TZ_C field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (69 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./TZ_C.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_C.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "TZ_C field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

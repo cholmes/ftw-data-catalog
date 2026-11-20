@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Kazakhstan.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KZ/Kazakhstan.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Kazakhstan field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (14,296,354 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Kazakhstan.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=KZ/Kazakhstan.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Kazakhstan field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

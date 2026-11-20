@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_PB.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_PB.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — Paraíba field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,787,187 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_PB.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_PB.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — Paraíba field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

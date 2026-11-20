@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./ET_AM.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_AM.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Ethiopia — Amara field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (54,526,452 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./ET_AM.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_AM.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Ethiopia — Amara field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

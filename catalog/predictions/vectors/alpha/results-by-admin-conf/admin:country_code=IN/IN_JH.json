@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./IN_JH.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_JH.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "India — Jhārkhand field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (12,813,353 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./IN_JH.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_JH.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "India — Jhārkhand field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

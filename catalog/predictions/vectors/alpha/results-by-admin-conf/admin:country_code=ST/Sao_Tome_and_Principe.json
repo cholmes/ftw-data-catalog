@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Sao_Tome_and_Principe.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ST/Sao_Tome_and_Principe.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Sao Tome and Principe field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (324 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Sao_Tome_and_Principe.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ST/Sao_Tome_and_Principe.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Sao Tome and Principe field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

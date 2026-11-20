@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./IN_D.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_D.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "IN_D field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (3,334 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./IN_D.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_D.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "IN_D field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./IN_HP.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_HP.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "India — Himāchal Pradesh field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (541,056 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./IN_HP.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IN/IN_HP.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "India — Himāchal Pradesh field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

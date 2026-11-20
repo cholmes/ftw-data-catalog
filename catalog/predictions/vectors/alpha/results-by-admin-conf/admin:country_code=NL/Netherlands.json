@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Netherlands.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NL/Netherlands.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Netherlands field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (471,584 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Netherlands.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NL/Netherlands.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Netherlands field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

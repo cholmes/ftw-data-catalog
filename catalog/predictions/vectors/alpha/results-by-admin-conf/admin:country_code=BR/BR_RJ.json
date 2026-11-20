@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_RJ.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_RJ.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — Rio de Janeiro field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (102,458 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_RJ.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_RJ.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — Rio de Janeiro field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

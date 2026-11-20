@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./TZ_23.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_23.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Tanzania, United Republic of — Singida field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (7,008,558 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./TZ_23.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_23.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Tanzania, United Republic of — Singida field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

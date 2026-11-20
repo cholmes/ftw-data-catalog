@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./ET_HA.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_HA.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Ethiopia — Harari People field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (58,793 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./ET_HA.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_HA.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Ethiopia — Harari People field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

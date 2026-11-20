@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Libya.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LY/Libya.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Libya field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (2,741,313 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Libya.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LY/Libya.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Libya field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

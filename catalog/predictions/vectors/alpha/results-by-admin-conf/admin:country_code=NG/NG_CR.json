@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./NG_CR.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_CR.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Nigeria — Cross River field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,142,471 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./NG_CR.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_CR.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Nigeria — Cross River field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

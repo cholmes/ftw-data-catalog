@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Saint_Lucia.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LC/Saint_Lucia.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Saint Lucia field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (14,942 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Saint_Lucia.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LC/Saint_Lucia.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Saint Lucia field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

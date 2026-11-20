@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Israel.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IL/Israel.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Israel field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (170,583 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Israel.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=IL/Israel.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Israel field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

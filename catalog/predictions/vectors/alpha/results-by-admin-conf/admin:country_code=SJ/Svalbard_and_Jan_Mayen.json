@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Svalbard_and_Jan_Mayen.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SJ/Svalbard_and_Jan_Mayen.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Svalbard and Jan Mayen field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (48,231 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Svalbard_and_Jan_Mayen.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=SJ/Svalbard_and_Jan_Mayen.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Svalbard and Jan Mayen field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

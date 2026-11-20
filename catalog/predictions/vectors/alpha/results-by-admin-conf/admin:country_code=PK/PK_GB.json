@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./PK_GB.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PK/PK_GB.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Pakistan — Gilgit-Baltistan field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (20,897 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./PK_GB.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=PK/PK_GB.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Pakistan — Gilgit-Baltistan field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

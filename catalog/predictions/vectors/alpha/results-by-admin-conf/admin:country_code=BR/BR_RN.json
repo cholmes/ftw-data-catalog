@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_RN.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_RN.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — Rio Grande do Norte field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (840,686 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_RN.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_RN.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — Rio Grande do Norte field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

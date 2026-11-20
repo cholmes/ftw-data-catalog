@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Liechtenstein.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LI/Liechtenstein.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Liechtenstein field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (795 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Liechtenstein.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=LI/Liechtenstein.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Liechtenstein field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

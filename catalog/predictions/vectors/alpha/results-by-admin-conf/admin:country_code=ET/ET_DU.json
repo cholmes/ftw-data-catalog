@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./ET_DU.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_DU.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "ET_DU field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (1,325 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./ET_DU.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=ET/ET_DU.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "ET_DU field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

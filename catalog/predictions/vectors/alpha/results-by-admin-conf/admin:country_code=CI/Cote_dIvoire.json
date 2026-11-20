@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Cote_dIvoire.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=CI/Cote_dIvoire.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Cote dIvoire field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (14,985,735 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Cote_dIvoire.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=CI/Cote_dIvoire.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Cote dIvoire field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

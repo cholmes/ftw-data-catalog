@@ -74,7 +74,7 @@
   ],
   "assets": {
     "pmtiles": {
-      "href": "./US.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=US/US.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "United States — country-wide field tiles (A5 aggregates z0–8, fields z9–13)",
       "roles": [

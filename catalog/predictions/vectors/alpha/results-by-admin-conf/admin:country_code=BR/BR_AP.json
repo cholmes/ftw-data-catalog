@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./BR_AP.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_AP.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Brazil — Amapá field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (367,710 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./BR_AP.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR_AP.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Brazil — Amapá field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

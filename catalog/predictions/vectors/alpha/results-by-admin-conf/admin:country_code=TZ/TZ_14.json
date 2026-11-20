@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./TZ_14.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_14.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Tanzania, United Republic of — Mbeya field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (5,792,129 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./TZ_14.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_14.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Tanzania, United Republic of — Mbeya field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

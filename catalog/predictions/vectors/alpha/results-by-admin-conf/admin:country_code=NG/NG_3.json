@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./NG_3.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_3.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "NG_3 field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (998 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./NG_3.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_3.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "NG_3 field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [

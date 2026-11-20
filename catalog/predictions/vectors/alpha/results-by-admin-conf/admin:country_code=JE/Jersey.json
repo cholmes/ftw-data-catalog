@@ -113,7 +113,7 @@
   "collection": "vectors",
   "assets": {
     "data": {
-      "href": "./Jersey.parquet",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=JE/Jersey.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Jersey field boundaries (GeoParquet)",
       "roles": [
@@ -122,7 +122,7 @@
       "description": "GeoParquet field-boundary polygons for this partition (5,492 features). See the collection's `table:columns` for field definitions."
     },
     "pmtiles": {
-      "href": "./Jersey.pmtiles",
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=JE/Jersey.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Jersey field boundaries (PMTiles, 2024/2025 layers)",
       "roles": [
