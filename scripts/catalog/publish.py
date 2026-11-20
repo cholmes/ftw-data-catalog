@@ -36,6 +36,7 @@ _CT_BY_SUFFIX = {
     ".md": "text/markdown; charset=utf-8",
     ".txt": "text/markdown; charset=utf-8",  # llms.txt
     ".png": "image/png",
+    ".svg": "image/svg+xml",
     ".yaml": "text/yaml; charset=utf-8",
     ".yml": "text/yaml; charset=utf-8",
 }
