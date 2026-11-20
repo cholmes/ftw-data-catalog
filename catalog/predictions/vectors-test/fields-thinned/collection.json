@@ -2,9 +2,10 @@
   "type": "Collection",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
-    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json"
   ],
   "portolan:styles": [
     "styles/fields",
@@ -12,8 +13,8 @@
     "styles/fields-size"
   ],
   "id": "fields-thinned",
-  "title": "Fields 2025 \u2014 thinned field polygons (test)",
-  "description": "TEST \u2014 every 2025 Fields of the World PRUE field polygon (1.58B), z0\u201313, through tylertoo's generalization ladder from z0 (density thinning + simplification + tile-size cap). Layer `fields` with per-field `area` (m\u00b2), `confidence` (0\u2013100, sparse), `country`, `state`. Built pre-dedupe (issue #9) and unfiltered; superseded by the per-year handover archives once they land. Styles: plain boundaries (default), per-field confidence, per-field size.",
+  "title": "Fields 2025 — thinned field polygons (test)",
+  "description": "TEST — every 2025 Fields of the World PRUE field polygon (1.58B), z0–13, through tylertoo's generalization ladder from z0 (density thinning + simplification + tile-size cap). Layer `fields` with per-field `area` (m²), `confidence` (0–100, sparse), `country`, `state`. Built pre-dedupe (issue #9) and unfiltered; superseded by the per-year handover archives once they land. Styles: plain boundaries (default), per-field confidence, per-field size.",
   "license": "CC-BY-4.0",
   "keywords": [
     "agriculture",
@@ -70,7 +71,7 @@
       "rel": "root",
       "href": "../../../catalog.json",
       "type": "application/json",
-      "title": "Fields of the World \u2014 Global"
+      "title": "Fields of the World — Global"
     },
     {
       "rel": "parent",
@@ -93,7 +94,7 @@
       "rel": "pmtiles",
       "href": "https://data.source.coop/ftw/global-data/predictions/vectors-test/fields-2025-thinned.pmtiles",
       "type": "application/vnd.pmtiles",
-      "title": "Fields 2025 \u2014 thinned polygons z0\u201313 (PMTiles)",
+      "title": "Fields 2025 — thinned polygons z0–13 (PMTiles)",
       "pmtiles:layers": [
         "fields"
       ]
@@ -115,12 +116,13 @@
     "pmtiles": {
       "href": "https://data.source.coop/ftw/global-data/predictions/vectors-test/fields-2025-thinned.pmtiles",
       "type": "application/vnd.pmtiles",
-      "title": "Fields 2025 \u2014 thinned polygons z0\u201313 (PMTiles)",
+      "title": "Fields 2025 — thinned polygons z0–13 (PMTiles)",
       "roles": [
         "visual"
       ],
       "file:size": 115501641953,
-      "file:checksum": "12204812cf97a02bb6e01fcba2c96003c478a3b619cf9805876f964fe1d236f41f73"
+      "file:checksum": "12204812cf97a02bb6e01fcba2c96003c478a3b619cf9805876f964fe1d236f41f73",
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Fields 2025 — thinned polygons z0–13 (PMTiles)."
     },
     "styles/fields": {
       "href": "./styles/fields.json",
@@ -131,7 +133,8 @@
         "default"
       ],
       "file:size": 1017,
-      "file:checksum": "1220367e9453e308479107263938fcc68390e6a129a3282d6cc3d16f310f18638f53"
+      "file:checksum": "1220367e9453e308479107263938fcc68390e6a129a3282d6cc3d16f310f18638f53",
+      "description": "MapLibre GL style (JSON) for rendering: Field boundaries (thinned)."
     },
     "styles/fields-confidence": {
       "href": "./styles/fields-confidence.json",
@@ -141,7 +144,8 @@
         "style"
       ],
       "file:size": 1661,
-      "file:checksum": "122068762abfecbccebc2c185bb692b3e812bfa30d6f980bba016e6a6eb1f4fd5693"
+      "file:checksum": "122068762abfecbccebc2c185bb692b3e812bfa30d6f980bba016e6a6eb1f4fd5693",
+      "description": "MapLibre GL style (JSON) for rendering: Field confidence (thinned)."
     },
     "styles/fields-size": {
       "href": "./styles/fields-size.json",
@@ -151,29 +155,40 @@
         "style"
       ],
       "file:size": 1120,
-      "file:checksum": "1220718bb2d675bea494c8196a84408e793d8db2009b9c4462d9fc027fa252b7e3de"
+      "file:checksum": "1220718bb2d675bea494c8196a84408e793d8db2009b9c4462d9fc027fa252b7e3de",
+      "description": "MapLibre GL style (JSON) for rendering: Field size (thinned)."
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
-      "title": "Fields 2025 \u2014 thinned field polygons (test) \u2014 README",
+      "title": "Fields 2025 — thinned field polygons (test) — README",
       "roles": [
         "metadata"
       ],
       "file:size": 645,
-      "file:checksum": "122054c9440686347e313d6b90e985ed6ae42b932e0a9477d2f1d76d970460e5abcd"
+      "file:checksum": "122054c9440686347e313d6b90e985ed6ae42b932e0a9477d2f1d76d970460e5abcd",
+      "description": "Human-readable documentation. Fields 2025 — thinned field polygons (test) — README."
     },
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
-      "title": "Fields 2025 \u2014 thinned field polygons \u2014 thumbnail",
+      "title": "Fields 2025 — thinned field polygons — thumbnail",
       "roles": [
         "thumbnail",
         "overview"
       ],
       "file:size": 363493,
-      "file:checksum": "1220f83e0d0df665abe6be6a9ac73cc06bcd2946da47635ae475c8ebf578730619ba"
+      "file:checksum": "1220f83e0d0df665abe6be6a9ac73cc06bcd2946da47635ae475c8ebf578730619ba",
+      "description": "Static preview image. Fields 2025 — thinned field polygons — thumbnail."
     }
   },
-  "updated": "2026-09-26T00:00:00Z"
+  "updated": "2026-09-26T00:00:00Z",
+  "partition:glob": "s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=*/*.parquet",
+  "partition:scheme": "hive",
+  "partition:keys": [
+    {
+      "name": "admin:country_code",
+      "type": "string"
+    }
+  ]
 }

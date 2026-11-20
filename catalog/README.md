@@ -4,7 +4,12 @@
   </a>
 </div>
 
-# Fields of the World — Global
+# Fields of the World — Global Data (1st Edition)
+
+> **This is the 1st Edition of the FTW global dataset.** It is superseded by the
+> [2nd Edition](https://data.source.coop/ftw/global-data-2e/catalog.json), now the primary
+> entry point for FTW global data. This catalog remains published and citable at its
+> existing URLs; it is linked from the 2nd Edition catalog as a sub-catalog.
 
 The first global, wall-to-wall agricultural field-boundary dataset at 10 m resolution:
 **~1.6 billion field polygons per year** — **1.63 billion for 2024** and **1.58 billion for 2025**

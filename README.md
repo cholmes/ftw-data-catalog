@@ -1,6 +1,14 @@
 # ftw-data-catalog
 
-Git-backed [Portolan](https://portolan-sdi.org)/STAC catalog for the **Fields of the World (FTW) Global** datasets — global agricultural field boundaries and prediction-quality layers at 10 m resolution.
+Git-backed [Portolan](https://portolan-sdi.org)/STAC catalog for the **Fields of the World (FTW)
+Global Data — 1st Edition** — global agricultural field boundaries and prediction-quality layers
+at 10 m resolution.
+
+**This is the 1st Edition.** It is superseded by the
+[2nd Edition](https://data.source.coop/ftw/global-data-2e/catalog.json)
+([ftw-global-data-catalog](https://github.com/fieldsoftheworld/ftw-global-data-catalog) repo),
+now the primary entry point for FTW global data; this catalog is linked from it as a
+sub-catalog and remains published at its existing URLs and collection ids.
 
 **This repository is the source of truth for catalog _metadata_ only.** The data itself — billions of field polygons, COGs, and Zarr stacks (hundreds of GB) — lives on [Source Cooperative](https://source.coop/ftw/global-data) and is never stored in or uploaded by this repo.
 

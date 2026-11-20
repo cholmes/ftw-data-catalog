@@ -2,7 +2,7 @@
   "type": "Collection",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
@@ -18,8 +18,8 @@
     "styles/confidence-2024"
   ],
   "id": "vectors",
-  "title": "FTW Global \u2014 Field Boundary Predictions (GeoParquet)",
-  "description": "Global agricultural field-boundary polygons. Part of [Fields of the World](https://fieldsofthe.world) \u2014 agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. ~3.2 billion field polygons across 195 countries, as cloud-native GeoParquet partitioned by country (admin, Hive layout), with per-country PMTiles for web visualization. A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing. Each field also carries a derived `confidence` (0\u2013100). Columns: id, geometry, bbox, metrics:area, metrics:perimeter, determination:datetime, determination:method, admin:country_code, admin:subdivision_code, confidence \u2014 see `table:columns` for definitions (including how `confidence` is derived).\n\n**How this was made.** Predictions come from the **PRUE** model ([Muhawenayo et al. 2026](https://arxiv.org/abs/2603.27101)) \u2014 a U-Net segmentation model with composite losses and targeted augmentations that, in a benchmark of 18 models, scored **76% IoU / 47% object-F1** on the Fields of the World benchmark, outperforming instance-segmentation and geospatial-foundation-model approaches. The **[Fields of the World benchmark](https://source.coop/kerner-lab/fields-of-the-world)** (get the data on Source Cooperative; Kerner et al. 2025, AAAI, [arXiv:2409.16252](https://arxiv.org/abs/2409.16252)) pairs multi-date multispectral **Sentinel-2** imagery with instance/semantic field masks across **70,462 samples in 24 countries on four continents**; models pre-trained on it generalize better to held-out countries. PRUE is run over global Sentinel-2 planting/harvest median composites, and the softmax outputs are thresholded and polygonized into these vectors. Downstream recipes (crop-type mapping, forest-loss attribution) are in the FTW field guide ([Corley et al. 2026](https://arxiv.org/abs/2602.08131)).",
+  "title": "FTW Global — Field Boundary Predictions (GeoParquet)",
+  "description": "Global agricultural field-boundary polygons. Part of [Fields of the World](https://fieldsofthe.world) — agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. ~3.2 billion field polygons across 195 countries, as cloud-native GeoParquet partitioned by country (admin, Hive layout), with per-country PMTiles for web visualization. A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing. Each field also carries a derived `confidence` (0–100). Columns: id, geometry, bbox, metrics:area, metrics:perimeter, determination:datetime, determination:method, admin:country_code, admin:subdivision_code, confidence — see `table:columns` for definitions (including how `confidence` is derived).\n\n**How this was made.** Predictions come from the **PRUE** model ([Muhawenayo et al. 2026](https://arxiv.org/abs/2603.27101)) — a U-Net segmentation model with composite losses and targeted augmentations that, in a benchmark of 18 models, scored **76% IoU / 47% object-F1** on the Fields of the World benchmark, outperforming instance-segmentation and geospatial-foundation-model approaches. The **[Fields of the World benchmark](https://source.coop/kerner-lab/fields-of-the-world)** (get the data on Source Cooperative; Kerner et al. 2025, AAAI, [arXiv:2409.16252](https://arxiv.org/abs/2409.16252)) pairs multi-date multispectral **Sentinel-2** imagery with instance/semantic field masks across **70,462 samples in 24 countries on four continents**; models pre-trained on it generalize better to held-out countries. PRUE is run over global Sentinel-2 planting/harvest median composites, and the softmax outputs are thresholded and polygonized into these vectors. Downstream recipes (crop-type mapping, forest-loss attribution) are in the FTW field guide ([Corley et al. 2026](https://arxiv.org/abs/2602.08131)).",
   "sci:citation": "Muhawenayo, G. et al. (2026). PRUE: A Practical Recipe for Field Boundary Segmentation at Scale. arXiv:2603.27101.",
   "sci:publications": [
     {
@@ -113,7 +113,7 @@
     {
       "name": "metrics:area",
       "type": "float",
-      "description": "Area of the field, in square meters (m\u00b2). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      "description": "Area of the field, in square meters (m²). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
     },
     {
       "name": "metrics:perimeter",
@@ -143,7 +143,7 @@
     {
       "name": "confidence",
       "type": "float",
-      "description": "Derived; not part of the upstream model output. Modeled PRUE confidence on a 0\u2013100 scale, sampled at the field's point-on-surface from the 500 m confidence COG ([predictions/confidence](https://data.source.coop/ftw/global-data/predictions/confidence/collection.json)) and rescaled `raw / 0.578178 * 100`, clamped to 100 (0.578178 is treated as 100%, matching the FTW inference app; this centroid sample is the closest single value to the app's `confidence_mean`); **null where the field falls outside the modeled-confidence layer's coverage \u2014 i.e. no value there, not a low score** (the layer is sparse and conservative, fully covering mainly the 24 FTW-labelled training countries). Recommended reliability filter: `confidence >= 69` (raw 0.4). Reflects 500 m cell-level model reliability, not individual-polygon geometric accuracy. Generated by [add_confidence.py](https://github.com/fieldsoftheworld/ftw-data-catalog/blob/main/scripts/confidence/add_confidence.py) (+ process_partition.sh, run_rails.sh, make_pmtiles.py)."
+      "description": "Derived; not part of the upstream model output. Modeled PRUE confidence on a 0–100 scale, sampled at the field's point-on-surface from the 500 m confidence COG ([predictions/confidence](https://data.source.coop/ftw/global-data/predictions/confidence/collection.json)) and rescaled `raw / 0.578178 * 100`, clamped to 100 (0.578178 is treated as 100%, matching the FTW inference app; this centroid sample is the closest single value to the app's `confidence_mean`); **null where the field falls outside the modeled-confidence layer's coverage — i.e. no value there, not a low score** (the layer is sparse and conservative, fully covering mainly the 24 FTW-labelled training countries). Recommended reliability filter: `confidence >= 69` (raw 0.4). Reflects 500 m cell-level model reliability, not individual-polygon geometric accuracy. Generated by [add_confidence.py](https://github.com/fieldsoftheworld/ftw-data-catalog/blob/main/scripts/confidence/add_confidence.py) (+ process_partition.sh, run_rails.sh, make_pmtiles.py)."
     }
   ],
   "partition:scheme": "hive",
@@ -158,7 +158,7 @@
       "rel": "root",
       "href": "../../catalog.json",
       "type": "application/json",
-      "title": "Fields of the World \u2014 Global"
+      "title": "Fields of the World — Global"
     },
     {
       "rel": "parent",
@@ -210,7 +210,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=AE/United_Arab_Emirates.json",
       "type": "application/geo+json",
-      "title": "United_Arab_Emirates"
+      "title": "United Arab Emirates"
     },
     {
       "rel": "item",
@@ -222,7 +222,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=AG/Antigua_and_Barbuda.json",
       "type": "application/geo+json",
-      "title": "Antigua_and_Barbuda"
+      "title": "Antigua and Barbuda"
     },
     {
       "rel": "item",
@@ -258,7 +258,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=AS/American_Samoa.json",
       "type": "application/geo+json",
-      "title": "American_Samoa"
+      "title": "American Samoa"
     },
     {
       "rel": "item",
@@ -274,9 +274,9 @@
     },
     {
       "rel": "item",
-      "href": "./alpha/results-by-admin-conf/admin:country_code=AX/\u00c5land_Islands.json",
+      "href": "./alpha/results-by-admin-conf/admin:country_code=AX/%C3%85land_Islands.json",
       "type": "application/geo+json",
-      "title": "\u00c5land_Islands"
+      "title": "Åland Islands"
     },
     {
       "rel": "item",
@@ -288,7 +288,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=BA/Bosnia_and_Herzegovina.json",
       "type": "application/geo+json",
-      "title": "Bosnia_and_Herzegovina"
+      "title": "Bosnia and Herzegovina"
     },
     {
       "rel": "item",
@@ -312,7 +312,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=BF/Burkina_Faso.json",
       "type": "application/geo+json",
-      "title": "Burkina_Faso"
+      "title": "Burkina Faso"
     },
     {
       "rel": "item",
@@ -340,9 +340,9 @@
     },
     {
       "rel": "item",
-      "href": "./alpha/results-by-admin-conf/admin:country_code=BL/Saint_Barth\u00e9lemy.json",
+      "href": "./alpha/results-by-admin-conf/admin:country_code=BL/Saint_Barth%C3%A9lemy.json",
       "type": "application/geo+json",
-      "title": "Saint_Barth\u00e9lemy"
+      "title": "Saint Barthélemy"
     },
     {
       "rel": "item",
@@ -360,7 +360,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=BQ/Bonaire_Sint_Eustatius_and_Saba.json",
       "type": "application/geo+json",
-      "title": "Bonaire_Sint_Eustatius_and_Saba"
+      "title": "Bonaire Sint Eustatius and Saba"
     },
     {
       "rel": "item",
@@ -402,13 +402,13 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=CD/DR_Congo.json",
       "type": "application/geo+json",
-      "title": "DR_Congo"
+      "title": "DR Congo"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=CF/Central_African_Republic.json",
       "type": "application/geo+json",
-      "title": "Central_African_Republic"
+      "title": "Central African Republic"
     },
     {
       "rel": "item",
@@ -426,7 +426,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=CI/Cote_dIvoire.json",
       "type": "application/geo+json",
-      "title": "Cote_dIvoire"
+      "title": "Cote dIvoire"
     },
     {
       "rel": "item",
@@ -450,7 +450,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=CR/Costa_Rica.json",
       "type": "application/geo+json",
-      "title": "Costa_Rica"
+      "title": "Costa Rica"
     },
     {
       "rel": "item",
@@ -462,13 +462,13 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=CV/Cape_Verde.json",
       "type": "application/geo+json",
-      "title": "Cape_Verde"
+      "title": "Cape Verde"
     },
     {
       "rel": "item",
-      "href": "./alpha/results-by-admin-conf/admin:country_code=CW/Cura\u00e7ao.json",
+      "href": "./alpha/results-by-admin-conf/admin:country_code=CW/Cura%C3%A7ao.json",
       "type": "application/geo+json",
-      "title": "Cura\u00e7ao"
+      "title": "Curaçao"
     },
     {
       "rel": "item",
@@ -510,7 +510,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=DO/Dominican_Republic.json",
       "type": "application/geo+json",
-      "title": "Dominican_Republic"
+      "title": "Dominican Republic"
     },
     {
       "rel": "item",
@@ -582,7 +582,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=GB/United_Kingdom.json",
       "type": "application/geo+json",
-      "title": "United_Kingdom"
+      "title": "United Kingdom"
     },
     {
       "rel": "item",
@@ -600,7 +600,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=GF/French_Guiana.json",
       "type": "application/geo+json",
-      "title": "French_Guiana"
+      "title": "French Guiana"
     },
     {
       "rel": "item",
@@ -642,7 +642,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=GQ/Equatorial_Guinea.json",
       "type": "application/geo+json",
-      "title": "Equatorial_Guinea"
+      "title": "Equatorial Guinea"
     },
     {
       "rel": "item",
@@ -672,7 +672,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=HK/Hong_Kong.json",
       "type": "application/geo+json",
-      "title": "Hong_Kong"
+      "title": "Hong Kong"
     },
     {
       "rel": "item",
@@ -720,7 +720,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=IM/Isle_of_Man.json",
       "type": "application/geo+json",
-      "title": "Isle_of_Man"
+      "title": "Isle of Man"
     },
     {
       "rel": "item",
@@ -804,19 +804,19 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=KN/Saint_Kitts_and_Nevis.json",
       "type": "application/geo+json",
-      "title": "Saint_Kitts_and_Nevis"
+      "title": "Saint Kitts and Nevis"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=KP/North_Korea.json",
       "type": "application/geo+json",
-      "title": "North_Korea"
+      "title": "North Korea"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=KR/South_Korea.json",
       "type": "application/geo+json",
-      "title": "South_Korea"
+      "title": "South Korea"
     },
     {
       "rel": "item",
@@ -828,7 +828,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=KY/Cayman_Islands.json",
       "type": "application/geo+json",
-      "title": "Cayman_Islands"
+      "title": "Cayman Islands"
     },
     {
       "rel": "item",
@@ -852,7 +852,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=LC/Saint_Lucia.json",
       "type": "application/geo+json",
-      "title": "Saint_Lucia"
+      "title": "Saint Lucia"
     },
     {
       "rel": "item",
@@ -864,7 +864,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=LK/Sri_Lanka.json",
       "type": "application/geo+json",
-      "title": "Sri_Lanka"
+      "title": "Sri Lanka"
     },
     {
       "rel": "item",
@@ -924,7 +924,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=MF/Saint_Martin_French_part.json",
       "type": "application/geo+json",
-      "title": "Saint_Martin_French_part"
+      "title": "Saint Martin French part"
     },
     {
       "rel": "item",
@@ -936,13 +936,13 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=MH/Marshall_Islands.json",
       "type": "application/geo+json",
-      "title": "Marshall_Islands"
+      "title": "Marshall Islands"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=MK/North_Macedonia.json",
       "type": "application/geo+json",
-      "title": "North_Macedonia"
+      "title": "North Macedonia"
     },
     {
       "rel": "item",
@@ -1068,7 +1068,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=NZ/New_Zealand.json",
       "type": "application/geo+json",
-      "title": "New_Zealand"
+      "title": "New Zealand"
     },
     {
       "rel": "item",
@@ -1092,7 +1092,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=PG/Papua_New_Guinea.json",
       "type": "application/geo+json",
-      "title": "Papua_New_Guinea"
+      "title": "Papua New Guinea"
     },
     {
       "rel": "item",
@@ -1110,13 +1110,13 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=PM/Saint_Pierre_and_Miquelon.json",
       "type": "application/geo+json",
-      "title": "Saint_Pierre_and_Miquelon"
+      "title": "Saint Pierre and Miquelon"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=PR/Puerto_Rico.json",
       "type": "application/geo+json",
-      "title": "Puerto_Rico"
+      "title": "Puerto Rico"
     },
     {
       "rel": "item",
@@ -1144,9 +1144,9 @@
     },
     {
       "rel": "item",
-      "href": "./alpha/results-by-admin-conf/admin:country_code=RE/R\u00e9union.json",
+      "href": "./alpha/results-by-admin-conf/admin:country_code=RE/R%C3%A9union.json",
       "type": "application/geo+json",
-      "title": "R\u00e9union"
+      "title": "Réunion"
     },
     {
       "rel": "item",
@@ -1176,13 +1176,13 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SA/Saudi_Arabia.json",
       "type": "application/geo+json",
-      "title": "Saudi_Arabia"
+      "title": "Saudi Arabia"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SB/Solomon_Islands.json",
       "type": "application/geo+json",
-      "title": "Solomon_Islands"
+      "title": "Solomon Islands"
     },
     {
       "rel": "item",
@@ -1218,7 +1218,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SJ/Svalbard_and_Jan_Mayen.json",
       "type": "application/geo+json",
-      "title": "Svalbard_and_Jan_Mayen"
+      "title": "Svalbard and Jan Mayen"
     },
     {
       "rel": "item",
@@ -1230,13 +1230,13 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SL/Sierra_Leone.json",
       "type": "application/geo+json",
-      "title": "Sierra_Leone"
+      "title": "Sierra Leone"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SM/San_Marino.json",
       "type": "application/geo+json",
-      "title": "San_Marino"
+      "title": "San Marino"
     },
     {
       "rel": "item",
@@ -1260,25 +1260,25 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SS/South_Sudan.json",
       "type": "application/geo+json",
-      "title": "South_Sudan"
+      "title": "South Sudan"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=ST/Sao_Tome_and_Principe.json",
       "type": "application/geo+json",
-      "title": "Sao_Tome_and_Principe"
+      "title": "Sao Tome and Principe"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SV/El_Salvador.json",
       "type": "application/geo+json",
-      "title": "El_Salvador"
+      "title": "El Salvador"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=SX/Sint_Maarten_Dutch_part.json",
       "type": "application/geo+json",
-      "title": "Sint_Maarten_Dutch_part"
+      "title": "Sint Maarten Dutch part"
     },
     {
       "rel": "item",
@@ -1296,7 +1296,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=TC/Turks_and_Caicos_Islands.json",
       "type": "application/geo+json",
-      "title": "Turks_and_Caicos_Islands"
+      "title": "Turks and Caicos Islands"
     },
     {
       "rel": "item",
@@ -1348,15 +1348,15 @@
     },
     {
       "rel": "item",
-      "href": "./alpha/results-by-admin-conf/admin:country_code=TR/T\u00fcrkiye.json",
+      "href": "./alpha/results-by-admin-conf/admin:country_code=TR/T%C3%BCrkiye.json",
       "type": "application/geo+json",
-      "title": "T\u00fcrkiye"
+      "title": "Türkiye"
     },
     {
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=TT/Trinidad_and_Tobago.json",
       "type": "application/geo+json",
-      "title": "Trinidad_and_Tobago"
+      "title": "Trinidad and Tobago"
     },
     {
       "rel": "item",
@@ -1380,7 +1380,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=UM/US_Minor_Outlying_Islands.json",
       "type": "application/geo+json",
-      "title": "US_Minor_Outlying_Islands"
+      "title": "US Minor Outlying Islands"
     },
     {
       "rel": "item",
@@ -1398,7 +1398,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=VC/Saint_Vincent_and_the_Grenadines.json",
       "type": "application/geo+json",
-      "title": "Saint_Vincent_and_the_Grenadines"
+      "title": "Saint Vincent and the Grenadines"
     },
     {
       "rel": "item",
@@ -1440,7 +1440,7 @@
       "rel": "item",
       "href": "./alpha/results-by-admin-conf/admin:country_code=ZA/South_Africa.json",
       "type": "application/geo+json",
-      "title": "South_Africa"
+      "title": "South Africa"
     },
     {
       "rel": "item",
@@ -1552,7 +1552,8 @@
       "title": "Field boundaries 2025 (PMTiles, default web view)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Field boundaries 2025 (PMTiles, default web view)."
     },
     "pmtiles_2024_confidence": {
       "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/2024_with_confidence.pmtiles",
@@ -1560,18 +1561,20 @@
       "title": "Field boundaries 2024 with confidence (PMTiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Field boundaries 2024 with confidence (PMTiles)."
     },
     "styles/2025": {
       "href": "./styles/2025.json",
       "type": "application/vnd.mapbox.style+json",
-      "title": "Field boundaries (2025) \u2014 default",
+      "title": "Field boundaries (2025) — default",
       "roles": [
         "style",
         "default"
       ],
       "file:size": 992,
-      "file:checksum": "1220276ca0c91a4ffe2d5a4890a1d35eb392c81971d0a22c884a1f7bdaf7aaa33571"
+      "file:checksum": "1220276ca0c91a4ffe2d5a4890a1d35eb392c81971d0a22c884a1f7bdaf7aaa33571",
+      "description": "MapLibre GL style (JSON) for rendering: Field boundaries (2025) — default."
     },
     "styles/2024": {
       "href": "./styles/2024.json",
@@ -1581,7 +1584,8 @@
         "style"
       ],
       "file:size": 992,
-      "file:checksum": "1220cb09637c6b59ec8ee85039240a75708d17b609b89ca1d2395452b7fc775bb3fe"
+      "file:checksum": "1220cb09637c6b59ec8ee85039240a75708d17b609b89ca1d2395452b7fc775bb3fe",
+      "description": "MapLibre GL style (JSON) for rendering: Field boundaries (2024)."
     },
     "styles/confidence-2025": {
       "href": "./styles/confidence-2025.json",
@@ -1591,7 +1595,8 @@
         "style"
       ],
       "file:size": 3286,
-      "file:checksum": "12207333ef98cbe0620638d0823aaf85a3be9221e5145b8eed18c7c9373c869164b6"
+      "file:checksum": "12207333ef98cbe0620638d0823aaf85a3be9221e5145b8eed18c7c9373c869164b6",
+      "description": "MapLibre GL style (JSON) for rendering: Field boundaries by confidence (2025)."
     },
     "styles/confidence-2024": {
       "href": "./styles/confidence-2024.json",
@@ -1601,7 +1606,8 @@
         "style"
       ],
       "file:size": 3284,
-      "file:checksum": "1220a36365a320d851fa7d5fb7794301888865e56678c7f4079151690a01da6d9df9"
+      "file:checksum": "1220a36365a320d851fa7d5fb7794301888865e56678c7f4079151690a01da6d9df9",
+      "description": "MapLibre GL style (JSON) for rendering: Field boundaries by confidence (2024)."
     },
     "thumbnail": {
       "href": "https://data.source.coop/ftw/global-data/docs/global-ftw-map.png",
@@ -1610,7 +1616,8 @@
       "roles": [
         "thumbnail",
         "overview"
-      ]
+      ],
+      "description": "Static preview image. Global field-boundary predictions map."
     },
     "documentation": {
       "href": "./llms.txt",
@@ -1620,7 +1627,8 @@
         "documentation"
       ],
       "file:size": 5246,
-      "file:checksum": "122029af0dbcb538cbc38a211c6c8ecf30fac2c83b7f06e7e967c339386a5a9e26a2"
+      "file:checksum": "122029af0dbcb538cbc38a211c6c8ecf30fac2c83b7f06e7e967c339386a5a9e26a2",
+      "description": "Machine-readable usage guide for AI agents and automated tools (llms.txt)."
     },
     "README": {
       "href": "./README.md",
@@ -1630,9 +1638,10 @@
         "metadata"
       ],
       "file:size": 6940,
-      "file:checksum": "1220d4e9f9cad5fed302f4505e9fc2a78916461dd3dd510ed0d78547033e63371ed2"
+      "file:checksum": "1220d4e9f9cad5fed302f4505e9fc2a78916461dd3dd510ed0d78547033e63371ed2",
+      "description": "Human-readable documentation. Human-readable README."
     }
   },
   "updated": "2026-09-03T22:46:37Z",
-  "partition:glob": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=*/*.parquet"
+  "partition:glob": "s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=*/*.parquet"
 }

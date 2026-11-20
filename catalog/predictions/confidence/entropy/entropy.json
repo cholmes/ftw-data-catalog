@@ -165,7 +165,8 @@
         }
       ],
       "file:size": 2389859497,
-      "file:checksum": "1220e77779b58de02075d3ee7a4693e1654dcf8dd42164d0d483a87f626e1f6b8914"
+      "file:checksum": "1220e77779b58de02075d3ee7a4693e1654dcf8dd42164d0d483a87f626e1f6b8914",
+      "description": "GeoParquet data asset underlying this collection's visualization. Model entropy (field & boundary)."
     },
     "documentation": {
       "href": "./llms.txt",
@@ -175,7 +176,8 @@
         "documentation"
       ],
       "file:size": 3014,
-      "file:checksum": "1220e880ddbf7fd52a28d74edeefdafc7ddd15e77efffba7224cbd7427940d72bedd"
+      "file:checksum": "1220e880ddbf7fd52a28d74edeefdafc7ddd15e77efffba7224cbd7427940d72bedd",
+      "description": "Machine-readable usage guide for AI agents and automated tools (llms.txt)."
     }
   }
 }

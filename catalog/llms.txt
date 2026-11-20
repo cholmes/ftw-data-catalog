@@ -1,5 +1,10 @@
-# Fields of the World — Global
+# Fields of the World — Global Data (1st Edition)
 
+> This is the 1st Edition of the FTW global dataset, superseded by the 2nd Edition
+> (https://data.source.coop/ftw/global-data-2e/catalog.json), now the primary FTW global-data entry
+> point. This catalog remains published at its existing URLs and is linked from the 2nd Edition
+> catalog as a sub-catalog (`rel: latest-version` on this root catalog points to it).
+>
 > The first global, wall-to-wall agricultural field-boundary dataset at 10 m resolution: 3.17 billion
 > field polygons across 241 countries and territories for 2024–2025, produced by applying the PRUE
 > field-boundary segmentation model (a U-Net with an EfficientNet-B7 encoder, trained on the Fields of

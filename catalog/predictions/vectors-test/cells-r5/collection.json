@@ -2,7 +2,7 @@
   "type": "Collection",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
@@ -13,8 +13,8 @@
     "styles/confidence-r5"
   ],
   "id": "cells-r5",
-  "title": "Fields 2025 \u2014 A5 r5 cell aggregates (test)",
-  "description": "TEST \u2014 A5 resolution-5 cell aggregates (~33,208 km\u00b2 equal-area cells) of the 2025 Fields of the World PRUE predictions, built with geoparquet-io and tiled with tylertoo. One `cells` layer, every cell verbatim at z0\u20138, with per-cell `count`, `area_ha` (total field area, hectares), `avg_confidence` (1dp; null in countries without modeled confidence) and `pct_covered` (percent of the cell covered by fields \u2014 boundary fields count fully in their home cell, so isolated values can exceed 100). The same aggregate is published as GeoParquet (adds the `a5_cell` id). 2025 subset, >350 km\u00b2 artifact polygons excluded, pre-dedupe (issue #9). Styles: field count (log ramp, default), coverage, average field size, and model confidence.",
+  "title": "Fields 2025 — A5 r5 cell aggregates (test)",
+  "description": "TEST — A5 resolution-5 cell aggregates (~33,208 km² equal-area cells) of the 2025 Fields of the World PRUE predictions, built with geoparquet-io and tiled with tylertoo. One `cells` layer, every cell verbatim at z0–8, with per-cell `count`, `area_ha` (total field area, hectares), `avg_confidence` (1dp; null in countries without modeled confidence) and `pct_covered` (percent of the cell covered by fields — boundary fields count fully in their home cell, so isolated values can exceed 100). The same aggregate is published as GeoParquet (adds the `a5_cell` id). 2025 subset, >350 km² artifact polygons excluded, pre-dedupe (issue #9). Styles: field count (log ramp, default), coverage, average field size, and model confidence.",
   "license": "CC-BY-4.0",
   "keywords": [
     "agriculture",
@@ -71,7 +71,7 @@
       "rel": "root",
       "href": "../../../catalog.json",
       "type": "application/json",
-      "title": "Fields of the World \u2014 Global"
+      "title": "Fields of the World — Global"
     },
     {
       "rel": "parent",
@@ -94,7 +94,7 @@
       "rel": "pmtiles",
       "href": "https://data.source.coop/ftw/global-data/predictions/vectors-test/cells-2025-r5.pmtiles",
       "type": "application/vnd.pmtiles",
-      "title": "A5 resolution-5 cell aggregates, 2025 (~33,200 km\u00b2 cells; PMTiles)",
+      "title": "A5 resolution-5 cell aggregates, 2025 (~33,200 km² cells; PMTiles)",
       "pmtiles:layers": [
         "cells"
       ]
@@ -116,12 +116,13 @@
     "pmtiles": {
       "href": "https://data.source.coop/ftw/global-data/predictions/vectors-test/cells-2025-r5.pmtiles",
       "type": "application/vnd.pmtiles",
-      "title": "A5 resolution-5 cell aggregates, 2025 (~33,200 km\u00b2 cells; PMTiles)",
+      "title": "A5 resolution-5 cell aggregates, 2025 (~33,200 km² cells; PMTiles)",
       "roles": [
         "visual"
       ],
       "file:size": 9129417,
-      "file:checksum": "1220692d82509295d8e70150f5eca1f0ec706d5cd8e0ff29e3328feb7b168ddeb6f3"
+      "file:checksum": "1220692d82509295d8e70150f5eca1f0ec706d5cd8e0ff29e3328feb7b168ddeb6f3",
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. A5 resolution-5 cell aggregates, 2025 (~33,200 km² cells; PMTiles)."
     },
     "parquet": {
       "href": "https://data.source.coop/ftw/global-data/predictions/vectors-test/cells_r5.parquet",
@@ -131,7 +132,8 @@
         "data"
       ],
       "file:size": 438540,
-      "file:checksum": "1220f2cfb584a56d2d0efb137d05c2a4dc7bf1232dd869d9e2dadc06c946fab98555"
+      "file:checksum": "1220f2cfb584a56d2d0efb137d05c2a4dc7bf1232dd869d9e2dadc06c946fab98555",
+      "description": "GeoParquet data asset underlying this collection's visualization. A5 resolution-5 cell aggregates, 2025 (GeoParquet)."
     },
     "styles/count-r5": {
       "href": "./styles/count-r5.json",
@@ -142,7 +144,8 @@
         "default"
       ],
       "file:size": 845,
-      "file:checksum": "1220a2574d6391f23ba532cabc9a2d6c6496fbb75c997da1a0387fd8c1d147d484d5"
+      "file:checksum": "1220a2574d6391f23ba532cabc9a2d6c6496fbb75c997da1a0387fd8c1d147d484d5",
+      "description": "MapLibre GL style (JSON) for rendering: Field count (A5 r5)."
     },
     "styles/coverage-r5": {
       "href": "./styles/coverage-r5.json",
@@ -152,7 +155,8 @@
         "style"
       ],
       "file:size": 926,
-      "file:checksum": "1220f2187347576916f02e6cf727558eecb56558670603a8dbcf7396f920766f29f3"
+      "file:checksum": "1220f2187347576916f02e6cf727558eecb56558670603a8dbcf7396f920766f29f3",
+      "description": "MapLibre GL style (JSON) for rendering: Field coverage (A5 r5)."
     },
     "styles/avg-size-r5": {
       "href": "./styles/avg-size-r5.json",
@@ -162,7 +166,8 @@
         "style"
       ],
       "file:size": 1074,
-      "file:checksum": "1220f9467469cb83976062b039f014d7d9a0525b1686e1038f68ec9e246aaf87bce0"
+      "file:checksum": "1220f9467469cb83976062b039f014d7d9a0525b1686e1038f68ec9e246aaf87bce0",
+      "description": "MapLibre GL style (JSON) for rendering: Average field size (A5 r5)."
     },
     "styles/confidence-r5": {
       "href": "./styles/confidence-r5.json",
@@ -172,28 +177,31 @@
         "style"
       ],
       "file:size": 1491,
-      "file:checksum": "1220af36fc28f0fbbe52183fd3687de08f488d674f53069436d995008f51623de64f"
+      "file:checksum": "1220af36fc28f0fbbe52183fd3687de08f488d674f53069436d995008f51623de64f",
+      "description": "MapLibre GL style (JSON) for rendering: Model confidence (A5 r5)."
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
-      "title": "Fields 2025 \u2014 A5 r5 cell aggregates (test) \u2014 README",
+      "title": "Fields 2025 — A5 r5 cell aggregates (test) — README",
       "roles": [
         "metadata"
       ],
       "file:size": 1178,
-      "file:checksum": "122016ed84f88ebd5ee14f1dca8b5eae8679d76f760509be5a93cff916eea111cede"
+      "file:checksum": "122016ed84f88ebd5ee14f1dca8b5eae8679d76f760509be5a93cff916eea111cede",
+      "description": "Human-readable documentation. Fields 2025 — A5 r5 cell aggregates (test) — README."
     },
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
-      "title": "Fields 2025 \u2014 A5 r5 cell aggregates \u2014 thumbnail",
+      "title": "Fields 2025 — A5 r5 cell aggregates — thumbnail",
       "roles": [
         "thumbnail",
         "overview"
       ],
       "file:size": 115837,
-      "file:checksum": "1220738fc8de477518531a631e7f6221184160aefb5a9a1371ccc48280c75ff18ef4"
+      "file:checksum": "1220738fc8de477518531a631e7f6221184160aefb5a9a1371ccc48280c75ff18ef4",
+      "description": "Static preview image. Fields 2025 — A5 r5 cell aggregates — thumbnail."
     }
   },
   "updated": "2026-09-26T00:00:00Z"

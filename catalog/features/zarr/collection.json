@@ -2,7 +2,7 @@
   "type": "Collection",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json"
@@ -127,7 +127,8 @@
       "roles": [
         "thumbnail",
         "overview"
-      ]
+      ],
+      "description": "Static preview image. Sentinel-2 composite preview."
     },
     "data": {
       "href": "https://data.source.coop/ftw/global-data/features/zarr/alpha/global.zarr",
@@ -145,7 +146,8 @@
       "title": "Agent/LLM usage guide",
       "roles": [
         "documentation"
-      ]
+      ],
+      "description": "Machine-readable usage guide for AI agents and automated tools (llms.txt)."
     },
     "README": {
       "href": "./README.md",
@@ -153,7 +155,8 @@
       "title": "Human-readable README",
       "roles": [
         "metadata"
-      ]
+      ],
+      "description": "Human-readable documentation. Human-readable README."
     }
   },
   "links": [

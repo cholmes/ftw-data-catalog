@@ -2,6 +2,7 @@
   "type": "Collection",
   "stac_version": "1.1.0",
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -165,7 +166,8 @@
       "roles": [
         "thumbnail",
         "overview"
-      ]
+      ],
+      "description": "Static preview image. Global field-boundary predictions preview."
     },
     "documentation": {
       "href": "./llms.txt",
@@ -173,7 +175,8 @@
       "title": "Agent/LLM usage guide",
       "roles": [
         "documentation"
-      ]
+      ],
+      "description": "Machine-readable usage guide for AI agents and automated tools (llms.txt)."
     },
     "README": {
       "href": "./README.md",
@@ -181,7 +184,8 @@
       "title": "Human-readable README",
       "roles": [
         "metadata"
-      ]
+      ],
+      "description": "Human-readable documentation. Human-readable README."
     }
   },
   "links": [

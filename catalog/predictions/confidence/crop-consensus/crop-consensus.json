@@ -52,7 +52,7 @@
   "collection": "confidence",
   "renders": {
     "crop_consensus": {
-      "title": "Cropland consensus (0\u20138)",
+      "title": "Cropland consensus (0–8)",
       "assets": [
         "data"
       ],
@@ -139,7 +139,8 @@
         }
       ],
       "file:size": 1040896487,
-      "file:checksum": "12204d54b2d08832e1e6d3b6706b8697933096ea2335ee1c9f39200ff5d4b8fafb22"
+      "file:checksum": "12204d54b2d08832e1e6d3b6706b8697933096ea2335ee1c9f39200ff5d4b8fafb22",
+      "description": "GeoParquet data asset underlying this collection's visualization. Cropland consensus count."
     },
     "documentation": {
       "href": "./llms.txt",
@@ -149,7 +150,8 @@
         "documentation"
       ],
       "file:size": 3060,
-      "file:checksum": "122025f8bb4ce8f18960fdcefb92ab7bc8b6794b3be28d284208abd512d7ee23523e"
+      "file:checksum": "122025f8bb4ce8f18960fdcefb92ab7bc8b6794b3be28d284208abd512d7ee23523e",
+      "description": "Machine-readable usage guide for AI agents and automated tools (llms.txt)."
     }
   }
 }

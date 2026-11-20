@@ -52,7 +52,7 @@
   "collection": "confidence",
   "renders": {
     "precision_ge2": {
-      "title": "Precision (\u2265 2 datasets)",
+      "title": "Precision (≥ 2 datasets)",
       "assets": [
         "data"
       ],
@@ -68,7 +68,7 @@
       "colormap_name": "viridis"
     },
     "recall_ge2": {
-      "title": "Recall (\u2265 2 datasets)",
+      "title": "Recall (≥ 2 datasets)",
       "assets": [
         "data"
       ],
@@ -189,7 +189,8 @@
         }
       ],
       "file:size": 1489877700,
-      "file:checksum": "12200e64fc1a90ee11db692cab3e81f6b796a04a33950e2f2eebb912640174daba6f"
+      "file:checksum": "12200e64fc1a90ee11db692cab3e81f6b796a04a33950e2f2eebb912640174daba6f",
+      "description": "GeoParquet data asset underlying this collection's visualization. Precision & recall vs cropland agreement."
     },
     "documentation": {
       "href": "./llms.txt",
@@ -199,7 +200,8 @@
         "documentation"
       ],
       "file:size": 3211,
-      "file:checksum": "12202c142577d24f4c37992264915cd80a8ee89e468229953278066ab594a9958201"
+      "file:checksum": "12202c142577d24f4c37992264915cd80a8ee89e468229953278066ab594a9958201",
+      "description": "Machine-readable usage guide for AI agents and automated tools (llms.txt)."
     }
   }
 }

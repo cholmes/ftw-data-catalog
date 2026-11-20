@@ -52,7 +52,7 @@
   "collection": "confidence",
   "renders": {
     "confidence": {
-      "title": "Confidence (red \u2192 green)",
+      "title": "Confidence (red → green)",
       "assets": [
         "data"
       ],
@@ -139,7 +139,8 @@
         }
       ],
       "file:size": 1124253797,
-      "file:checksum": "12205b654afcb093d7069bedcc871e4e4a0fc3ed4aacdc28f2d78e4d5eab4d052504"
+      "file:checksum": "12205b654afcb093d7069bedcc871e4e4a0fc3ed4aacdc28f2d78e4d5eab4d052504",
+      "description": "GeoParquet data asset underlying this collection's visualization. Confidence score (EPSG:4326, float32)."
     },
     "visual": {
       "href": "https://data.source.coop/ftw/global-data/predictions/confidence/confidence/prue_v1_confidence_global_uint8_3857.tif",
@@ -187,7 +188,8 @@
         }
       ],
       "file:size": 334497875,
-      "file:checksum": "1220af5eaa4ced0b4caa49fce75ea7adea5deda894462f920224aea80f57b17bf1aa"
+      "file:checksum": "1220af5eaa4ced0b4caa49fce75ea7adea5deda894462f920224aea80f57b17bf1aa",
+      "description": "Confidence score, 8-bit web-mercator (display) — downsampled web-Mercator preview COG for fast rendering."
     },
     "documentation": {
       "href": "./llms.txt",
@@ -197,7 +199,8 @@
         "documentation"
       ],
       "file:size": 3582,
-      "file:checksum": "1220c8efb31719d5650416102d3f37b216e26d4ce0a12aa565f27258a7ed830b71e1"
+      "file:checksum": "1220c8efb31719d5650416102d3f37b216e26d4ce0a12aa565f27258a7ed830b71e1",
+      "description": "Machine-readable usage guide for AI agents and automated tools (llms.txt)."
     }
   }
 }

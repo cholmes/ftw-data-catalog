@@ -6,8 +6,8 @@ data on S3 via relative hrefs; countries split into multiple parquets get a
 country sub-catalog. Each item carries an overview description, `table:columns`
 (field definitions with spec links; the full `confidence` derivation lives there),
 a per-year MapLibre style, a README, and a `derived_from` link to the prediction
-Zarr. The collection adds a Portolan glob `data` asset, two collection PMTiles, and
-the MapLibre styles.
+Zarr. The collection adds an s3:// `partition:glob` over all admin partitions
+(PORTO-FMT-064), two collection PMTiles, and the MapLibre styles.
 
 Pure builders (bbox_to_polygon / title_for / build_item / build_collection) are
 unit-tested. The CLI reads each parquet's bbox + row count (+ confidence stats from
@@ -39,11 +39,19 @@ PROJ_EXT = "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
 VECTOR_EXT = "https://stac-extensions.github.io/vector/v0.1.0/schema.json"
 WEBMAP_EXT = "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
 TABLE_EXT = "https://stac-extensions.github.io/table/v1.2.0/schema.json"
-PARTITION_EXT = "https://portolan-sdi.github.io/stac-partition-extension/v1.0.0/schema.json"
+# Matches the URI rashid resolves, and what the committed collection.json
+# already declares; not the github.io form this constant used to hold (fixed
+# alongside scripts/migrate/upgrade_to_0_3.py — see PORTO-FMT-064).
+PARTITION_EXT = "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json"
 # The Portolan profile this catalog declares. It is the *sole* conformance signal,
 # so emitting it here keeps a regeneration from silently dropping it (which is
 # exactly what happened once — see scripts/migrate/upgrade_to_0_2.py).
-PORTOLAN_EXT = "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
+PORTOLAN_EXT = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
+# s3:// mirrors HTTPS_BASE/COLLECTION_HREF 1:1 (same bucket, same keys — see
+# scripts/catalog/publish_metadata.sh). partition:glob MUST use a bucket-native,
+# listable scheme (PORTO-FMT-064); a data asset's href MUST NOT contain a glob
+# (PORTO-FMT-065), so the glob lives only in partition:glob, never in `assets`.
+S3_BASE = "s3://us-west-2.opendata.source.coop/tge-labs/ftw-global-data"
 
 # Field-definition specs (linked in each column description + via `describedby`).
 FIBOA_CORE = "https://github.com/fiboa/specification/blob/main/core/README.md"
@@ -421,15 +429,14 @@ def build_collection(item_links, child_links):
         "table:columns": TABLE_COLUMNS,
         "partition:scheme": "hive",
         "partition:keys": [{"name": "admin:country_code", "type": "string"}],
+        # PORTO-FMT-064: absolute, bucket-native, listable scheme — not the
+        # https:// COLLECTION_HREF form, which a client can't list to expand.
+        "partition:glob": f"{S3_BASE}/{DATA_REL}/admin:country_code=*/*.parquet",
         "links": links,
         "assets": {
-            "data": {
-                "href": f"./{DATA_REL}/admin:country_code=*/*.parquet",
-                "type": "application/vnd.apache.parquet",
-                "title": "Field-boundary polygons, partitioned by country (GeoParquet glob)",
-                "description": "Portolan glob over all admin (country) partitions.",
-                "roles": ["data"],
-            },
+            # No `data` asset here: PORTO-FMT-065 forbids a glob in an asset
+            # href, and partition:glob above is the primary-data reference
+            # (PORTO-CORE-082) for this partitioned collection.
             "pmtiles_2025": {
                 "href": PMTILES_2025,
                 "type": "application/vnd.pmtiles",
