@@ -1,0 +1,219 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "id": "Colombia",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -81.72978954749739,
+          -4.221460942097812
+        ],
+        [
+          -66.93890310147098,
+          -4.221460942097812
+        ],
+        [
+          -66.93890310147098,
+          13.388418334642793
+        ],
+        [
+          -81.72978954749739,
+          13.388418334642793
+        ],
+        [
+          -81.72978954749739,
+          -4.221460942097812
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -81.72978954749739,
+    -4.221460942097812,
+    -66.93890310147098,
+    13.388418334642793
+  ],
+  "properties": {
+    "title": "Colombia",
+    "description": "Agricultural field boundaries for Colombia. Part of [Fields of the World](https://fieldsofthe.world) — agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. This partition contains 11,021,601 field polygons; 86% fall within the modeled-confidence layer's coverage (confidence 0–100, here 5–100; null elsewhere means outside the layer's coverage, not low confidence). A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing. Columns: id, geometry, bbox, metrics:area, metrics:perimeter, determination:datetime, determination:method, admin:country_code, admin:subdivision_code, confidence — see `table:columns` for definitions (including how `confidence` is derived).",
+    "datetime": null,
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2025-12-31T23:59:59Z",
+    "admin:country_code": "CO",
+    "proj:code": "EPSG:4326",
+    "geoparquet:geometry_type": "Polygon",
+    "geoparquet:feature_count": 11021601,
+    "table:columns": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "An identifier for the field. Must be unique per collection. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "geometry",
+        "type": "binary",
+        "description": "A geometry that reflects the footprint of the field, usually a Polygon. Default CRS is WGS84. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "bbox",
+        "type": "struct",
+        "description": "The bounding box of the field. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "metrics:area",
+        "type": "float",
+        "description": "Area of the field, in square meters (m²). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "metrics:perimeter",
+        "type": "float",
+        "description": "Perimeter of the field, in meters (m). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "determination:datetime",
+        "type": "timestamp",
+        "description": "The last timestamp at which the field did exist and was observed, in the UTC timezone. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "determination:method",
+        "type": "string",
+        "description": "The boundary creation method (one of: manual, surveyed, driven, auto-operation, auto-imagery, unknown). ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "admin:country_code",
+        "type": "string",
+        "description": "ISO 3166-1 alpha-2 country code (aka admin0). Two-letter country code for the country that contains the field. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "admin:subdivision_code",
+        "type": "string",
+        "description": "ISO 3166-2 code for the principal subdivision (e.g. province or state, aka admin1) of a country that contains the field. Only the subdivision part of the code is stored. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "description": "Derived; not part of the upstream model output. Modeled PRUE confidence on a 0–100 scale, sampled at the field's point-on-surface from the 500 m confidence COG ([predictions/confidence](https://data.source.coop/ftw/global-data/predictions/confidence/collection.json)) and rescaled `raw / 0.578178 * 100`, clamped to 100 (0.578178 is treated as 100%, matching the FTW inference app; this centroid sample is the closest single value to the app's `confidence_mean`); **null where the field falls outside the modeled-confidence layer's coverage — i.e. no value there, not a low score** (the layer is sparse and conservative, fully covering mainly the 24 FTW-labelled training countries). Recommended reliability filter: `confidence >= 69` (raw 0.4). Reflects 500 m cell-level model reliability, not individual-polygon geometric accuracy. Generated by [add_confidence.py](https://github.com/fieldsoftheworld/ftw-data-catalog/blob/main/scripts/confidence/add_confidence.py) (+ process_partition.sh, run_rails.sh, make_pmtiles.py)."
+      }
+    ],
+    "portolan:styles": [
+      "style-2025",
+      "style-2024",
+      "style-confidence-2025",
+      "style-confidence-2024"
+    ]
+  },
+  "collection": "vectors",
+  "assets": {
+    "data": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=CO/Colombia.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Colombia field boundaries (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "description": "GeoParquet field-boundary polygons for this partition (11,021,601 features). See the collection's `table:columns` for field definitions."
+    },
+    "pmtiles": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=CO/Colombia.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Colombia field boundaries (PMTiles, 2024/2025 layers)",
+      "roles": [
+        "visual"
+      ],
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Colombia field boundaries (PMTiles, 2024/2025 layers)."
+    },
+    "style-2025": {
+      "href": "./Colombia.2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 908,
+      "file:checksum": "122073407a9035f26092e9a26ed88689c60004b8eb7773c6ab68edea3b4e1890b01c",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2025)."
+    },
+    "style-2024": {
+      "href": "./Colombia.2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 908,
+      "file:checksum": "12200dedfe3e1e70145b3e571904465df735765bd5ec4faee3e1f3900d431682acbc",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2024)."
+    },
+    "style-confidence-2025": {
+      "href": "./Colombia.confidence-2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2652,
+      "file:checksum": "122094021dcad7b0a70d80c4d16bc8eec862e31c25d9279f764321519280873ef230",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2025)."
+    },
+    "style-confidence-2024": {
+      "href": "./Colombia.confidence-2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2652,
+      "file:checksum": "1220e56115ede82dd42fcf158848dd9ce2a5f1aa91c355e780c8eac4de1d354efa0f",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2024)."
+    },
+    "README": {
+      "href": "./Colombia.README.md",
+      "type": "text/markdown",
+      "title": "Colombia — README",
+      "roles": [
+        "metadata"
+      ],
+      "file:size": 4591,
+      "file:checksum": "1220f17ec8f44ac33d79551e9f28bc6492cb7de24f0d2b62bf70d05f9ca2432365d8",
+      "description": "Human-readable documentation. Colombia — README."
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../../../../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "collection",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "derived_from",
+      "href": "https://data.source.coop/ftw/global-data/predictions/zarr/collection.json",
+      "type": "application/json",
+      "title": "FTW prediction probabilities (Zarr)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ]
+}

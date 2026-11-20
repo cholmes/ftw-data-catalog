@@ -9,11 +9,12 @@ links are counted and reported rather than resolved.
 """
 import json, re, sys
 from pathlib import Path
+from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1] / "catalog"
 
-# catalog/features/<year>/collection.json -> ./<utm zone>/catalog.json (generated to S3)
-GENERATED_TREE = (re.compile(r"^features/(2024|2025)/collection\.json$"),
+# catalog/first-edition/features/<year>/collection.json -> ./<utm zone>/catalog.json (generated to S3)
+GENERATED_TREE = (re.compile(r"^first-edition/features/(2024|2025)/collection\.json$"),
                   re.compile(r"^\./[0-6][0-9]/catalog\.json$"))
 
 def stac_json_files():
@@ -45,7 +46,11 @@ def check():
             if GENERATED_TREE[0].match(rel_path) and GENERATED_TREE[1].match(href):
                 generated += 1
                 continue
-            target = (jf.parent / href).resolve()
+            # A non-ASCII filename (e.g. "Åland_Islands.json") is percent-encoded
+            # in the href (PORTO/RFC 3986 -- a literal non-ASCII byte is not a
+            # valid URI reference), but the file on disk keeps its real UTF-8
+            # name; unquote before resolving, same as any HTTP client would.
+            target = (jf.parent / unquote(href)).resolve()
             if not target.exists():
                 errors.append(f"{jf}: link rel={link.get('rel')} -> missing {href}")
     if errors:

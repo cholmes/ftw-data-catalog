@@ -1,0 +1,219 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "id": "NG_CR",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          7.870003485939411,
+          4.687188814594398
+        ],
+        [
+          9.474837841782414,
+          4.687188814594398
+        ],
+        [
+          9.474837841782414,
+          6.8976651087017995
+        ],
+        [
+          7.870003485939411,
+          6.8976651087017995
+        ],
+        [
+          7.870003485939411,
+          4.687188814594398
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    7.870003485939411,
+    4.687188814594398,
+    9.474837841782414,
+    6.8976651087017995
+  ],
+  "properties": {
+    "title": "Nigeria — Cross River",
+    "description": "Agricultural field boundaries for Nigeria — Cross River. Part of [Fields of the World](https://fieldsofthe.world) — agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. This partition contains 1,142,471 field polygons. A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing. Columns: id, geometry, bbox, metrics:area, metrics:perimeter, determination:datetime, determination:method, admin:country_code, admin:subdivision_code, confidence — see `table:columns` for definitions (including how `confidence` is derived).",
+    "datetime": null,
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2025-12-31T23:59:59Z",
+    "admin:country_code": "NG",
+    "proj:code": "EPSG:4326",
+    "geoparquet:geometry_type": "Polygon",
+    "geoparquet:feature_count": 1142471,
+    "table:columns": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "An identifier for the field. Must be unique per collection. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "geometry",
+        "type": "binary",
+        "description": "A geometry that reflects the footprint of the field, usually a Polygon. Default CRS is WGS84. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "bbox",
+        "type": "struct",
+        "description": "The bounding box of the field. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "metrics:area",
+        "type": "float",
+        "description": "Area of the field, in square meters (m²). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "metrics:perimeter",
+        "type": "float",
+        "description": "Perimeter of the field, in meters (m). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "determination:datetime",
+        "type": "timestamp",
+        "description": "The last timestamp at which the field did exist and was observed, in the UTC timezone. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "determination:method",
+        "type": "string",
+        "description": "The boundary creation method (one of: manual, surveyed, driven, auto-operation, auto-imagery, unknown). ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "admin:country_code",
+        "type": "string",
+        "description": "ISO 3166-1 alpha-2 country code (aka admin0). Two-letter country code for the country that contains the field. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "admin:subdivision_code",
+        "type": "string",
+        "description": "ISO 3166-2 code for the principal subdivision (e.g. province or state, aka admin1) of a country that contains the field. Only the subdivision part of the code is stored. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "description": "Derived; not part of the upstream model output. Modeled PRUE confidence on a 0–100 scale, sampled at the field's point-on-surface from the 500 m confidence COG ([predictions/confidence](https://data.source.coop/ftw/global-data/predictions/confidence/collection.json)) and rescaled `raw / 0.578178 * 100`, clamped to 100 (0.578178 is treated as 100%, matching the FTW inference app; this centroid sample is the closest single value to the app's `confidence_mean`); **null where the field falls outside the modeled-confidence layer's coverage — i.e. no value there, not a low score** (the layer is sparse and conservative, fully covering mainly the 24 FTW-labelled training countries). Recommended reliability filter: `confidence >= 69` (raw 0.4). Reflects 500 m cell-level model reliability, not individual-polygon geometric accuracy. Generated by [add_confidence.py](https://github.com/fieldsoftheworld/ftw-data-catalog/blob/main/scripts/confidence/add_confidence.py) (+ process_partition.sh, run_rails.sh, make_pmtiles.py)."
+      }
+    ],
+    "portolan:styles": [
+      "style-2025",
+      "style-2024",
+      "style-confidence-2025",
+      "style-confidence-2024"
+    ]
+  },
+  "collection": "vectors",
+  "assets": {
+    "data": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_CR.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Nigeria — Cross River field boundaries (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "description": "GeoParquet field-boundary polygons for this partition (1,142,471 features). See the collection's `table:columns` for field definitions."
+    },
+    "pmtiles": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=NG/NG_CR.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Nigeria — Cross River field boundaries (PMTiles, 2024/2025 layers)",
+      "roles": [
+        "visual"
+      ],
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Nigeria — Cross River field boundaries (PMTiles, 2024/2025 layers)."
+    },
+    "style-2025": {
+      "href": "./NG_CR.2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 899,
+      "file:checksum": "122077f7720d302a41e484edc6e39cd4bec7c2e016d53830e14ffc4702035d82c9de",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2025)."
+    },
+    "style-2024": {
+      "href": "./NG_CR.2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 899,
+      "file:checksum": "12207148a0b2b57230727cdbb1f808ac553733f5e0e86df0eba19fdd81acf0de5c98",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2024)."
+    },
+    "style-confidence-2025": {
+      "href": "./NG_CR.confidence-2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2643,
+      "file:checksum": "12202269e4b80e1620303c8b16ef415a0d992b0fb168f825bcaab26194e35def63ed",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2025)."
+    },
+    "style-confidence-2024": {
+      "href": "./NG_CR.confidence-2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2643,
+      "file:checksum": "1220eea8c417d7c39f9e49f2b5a29cae0688a41c69fbdad39264915e7572ef378432",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2024)."
+    },
+    "README": {
+      "href": "./NG_CR.README.md",
+      "type": "text/markdown",
+      "title": "Nigeria — Cross River — README",
+      "roles": [
+        "metadata"
+      ],
+      "file:size": 4436,
+      "file:checksum": "1220b1e62e93d0d95a48f2b4580741c37b3c69cdb8d4a1ae6ad2ec9ce62620d95c86",
+      "description": "Human-readable documentation. Nigeria — Cross River — README."
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../../../../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "collection",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "derived_from",
+      "href": "https://data.source.coop/ftw/global-data/predictions/zarr/collection.json",
+      "type": "application/json",
+      "title": "FTW prediction probabilities (Zarr)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ]
+}

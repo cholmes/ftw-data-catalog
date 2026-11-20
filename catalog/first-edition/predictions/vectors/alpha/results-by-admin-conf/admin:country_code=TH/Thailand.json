@@ -1,0 +1,219 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "id": "Thailand",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          97.37915684039243,
+          5.696801651164198
+        ],
+        [
+          105.63805754050404,
+          5.696801651164198
+        ],
+        [
+          105.63805754050404,
+          20.464421816856795
+        ],
+        [
+          97.37915684039243,
+          20.464421816856795
+        ],
+        [
+          97.37915684039243,
+          5.696801651164198
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    97.37915684039243,
+    5.696801651164198,
+    105.63805754050404,
+    20.464421816856795
+  ],
+  "properties": {
+    "title": "Thailand",
+    "description": "Agricultural field boundaries for Thailand. Part of [Fields of the World](https://fieldsofthe.world) — agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. This partition contains 63,147,093 field polygons; 0% fall within the modeled-confidence layer's coverage (confidence 0–100, here 17–98; null elsewhere means outside the layer's coverage, not low confidence). A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing. Columns: id, geometry, bbox, metrics:area, metrics:perimeter, determination:datetime, determination:method, admin:country_code, admin:subdivision_code, confidence — see `table:columns` for definitions (including how `confidence` is derived).",
+    "datetime": null,
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2025-12-31T23:59:59Z",
+    "admin:country_code": "TH",
+    "proj:code": "EPSG:4326",
+    "geoparquet:geometry_type": "Polygon",
+    "geoparquet:feature_count": 63147093,
+    "table:columns": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "An identifier for the field. Must be unique per collection. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "geometry",
+        "type": "binary",
+        "description": "A geometry that reflects the footprint of the field, usually a Polygon. Default CRS is WGS84. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "bbox",
+        "type": "struct",
+        "description": "The bounding box of the field. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "metrics:area",
+        "type": "float",
+        "description": "Area of the field, in square meters (m²). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "metrics:perimeter",
+        "type": "float",
+        "description": "Perimeter of the field, in meters (m). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "determination:datetime",
+        "type": "timestamp",
+        "description": "The last timestamp at which the field did exist and was observed, in the UTC timezone. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "determination:method",
+        "type": "string",
+        "description": "The boundary creation method (one of: manual, surveyed, driven, auto-operation, auto-imagery, unknown). ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "admin:country_code",
+        "type": "string",
+        "description": "ISO 3166-1 alpha-2 country code (aka admin0). Two-letter country code for the country that contains the field. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "admin:subdivision_code",
+        "type": "string",
+        "description": "ISO 3166-2 code for the principal subdivision (e.g. province or state, aka admin1) of a country that contains the field. Only the subdivision part of the code is stored. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "description": "Derived; not part of the upstream model output. Modeled PRUE confidence on a 0–100 scale, sampled at the field's point-on-surface from the 500 m confidence COG ([predictions/confidence](https://data.source.coop/ftw/global-data/predictions/confidence/collection.json)) and rescaled `raw / 0.578178 * 100`, clamped to 100 (0.578178 is treated as 100%, matching the FTW inference app; this centroid sample is the closest single value to the app's `confidence_mean`); **null where the field falls outside the modeled-confidence layer's coverage — i.e. no value there, not a low score** (the layer is sparse and conservative, fully covering mainly the 24 FTW-labelled training countries). Recommended reliability filter: `confidence >= 69` (raw 0.4). Reflects 500 m cell-level model reliability, not individual-polygon geometric accuracy. Generated by [add_confidence.py](https://github.com/fieldsoftheworld/ftw-data-catalog/blob/main/scripts/confidence/add_confidence.py) (+ process_partition.sh, run_rails.sh, make_pmtiles.py)."
+      }
+    ],
+    "portolan:styles": [
+      "style-2025",
+      "style-2024",
+      "style-confidence-2025",
+      "style-confidence-2024"
+    ]
+  },
+  "collection": "vectors",
+  "assets": {
+    "data": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TH/Thailand.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Thailand field boundaries (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "description": "GeoParquet field-boundary polygons for this partition (63,147,093 features). See the collection's `table:columns` for field definitions."
+    },
+    "pmtiles": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TH/Thailand.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Thailand field boundaries (PMTiles, 2024/2025 layers)",
+      "roles": [
+        "visual"
+      ],
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Thailand field boundaries (PMTiles, 2024/2025 layers)."
+    },
+    "style-2025": {
+      "href": "./Thailand.2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 908,
+      "file:checksum": "12207edb148249556d947cff715b6cf1455f6afc8be96e98e6d7e80a0865609e76ce",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2025)."
+    },
+    "style-2024": {
+      "href": "./Thailand.2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 908,
+      "file:checksum": "1220a9868ca37aaec8d58b7c2a811070e316c1dcbcadf3f8fcd2f6ee161a8ceb7736",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2024)."
+    },
+    "style-confidence-2025": {
+      "href": "./Thailand.confidence-2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2652,
+      "file:checksum": "1220ab78dc176e9091e95d9971671e44df0799ec754ace706c4e0ad37b7662f89a15",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2025)."
+    },
+    "style-confidence-2024": {
+      "href": "./Thailand.confidence-2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2652,
+      "file:checksum": "1220174d26c44de1c0a9720f1b1c2f5f64c65f465fe6644a6e4a3345a62f7c21e9d9",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2024)."
+    },
+    "README": {
+      "href": "./Thailand.README.md",
+      "type": "text/markdown",
+      "title": "Thailand — README",
+      "roles": [
+        "metadata"
+      ],
+      "file:size": 4590,
+      "file:checksum": "1220c034bbc6b29b7da855a7e2d0ede66f8ce4687540deb12a6a91863932daa1725e",
+      "description": "Human-readable documentation. Thailand — README."
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../../../../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "collection",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "derived_from",
+      "href": "https://data.source.coop/ftw/global-data/predictions/zarr/collection.json",
+      "type": "application/json",
+      "title": "FTW prediction probabilities (Zarr)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ]
+}

@@ -1,0 +1,419 @@
+{
+  "type": "Catalog",
+  "stac_version": "1.1.0",
+  "id": "vectors-US",
+  "title": "United States — field boundary predictions",
+  "description": "Field-boundary predictions for United States, split into 61 admin-subdivision partitions. Part of [Fields of the World](https://fieldsofthe.world) — agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../../../../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "parent",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "derived_from",
+      "href": "https://data.source.coop/ftw/global-data/predictions/zarr/collection.json",
+      "type": "application/json",
+      "title": "FTW prediction probabilities (Zarr)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "item",
+      "href": "./US.json",
+      "type": "application/geo+json",
+      "title": "US (country-wide tiled overview)"
+    },
+    {
+      "rel": "item",
+      "href": "./US_AB.json",
+      "type": "application/geo+json",
+      "title": "US_AB"
+    },
+    {
+      "rel": "item",
+      "href": "./US_AK.json",
+      "type": "application/geo+json",
+      "title": "United States — Alaska"
+    },
+    {
+      "rel": "item",
+      "href": "./US_AL.json",
+      "type": "application/geo+json",
+      "title": "United States — Alabama"
+    },
+    {
+      "rel": "item",
+      "href": "./US_AR.json",
+      "type": "application/geo+json",
+      "title": "United States — Arkansas"
+    },
+    {
+      "rel": "item",
+      "href": "./US_AZ.json",
+      "type": "application/geo+json",
+      "title": "United States — Arizona"
+    },
+    {
+      "rel": "item",
+      "href": "./US_BC.json",
+      "type": "application/geo+json",
+      "title": "US_BC"
+    },
+    {
+      "rel": "item",
+      "href": "./US_BCN.json",
+      "type": "application/geo+json",
+      "title": "US_BCN"
+    },
+    {
+      "rel": "item",
+      "href": "./US_CA.json",
+      "type": "application/geo+json",
+      "title": "United States — California"
+    },
+    {
+      "rel": "item",
+      "href": "./US_CHH.json",
+      "type": "application/geo+json",
+      "title": "US_CHH"
+    },
+    {
+      "rel": "item",
+      "href": "./US_CO.json",
+      "type": "application/geo+json",
+      "title": "United States — Colorado"
+    },
+    {
+      "rel": "item",
+      "href": "./US_COA.json",
+      "type": "application/geo+json",
+      "title": "US_COA"
+    },
+    {
+      "rel": "item",
+      "href": "./US_CT.json",
+      "type": "application/geo+json",
+      "title": "United States — Connecticut"
+    },
+    {
+      "rel": "item",
+      "href": "./US_DE.json",
+      "type": "application/geo+json",
+      "title": "United States — Delaware"
+    },
+    {
+      "rel": "item",
+      "href": "./US_FL.json",
+      "type": "application/geo+json",
+      "title": "United States — Florida"
+    },
+    {
+      "rel": "item",
+      "href": "./US_GA.json",
+      "type": "application/geo+json",
+      "title": "United States — Georgia"
+    },
+    {
+      "rel": "item",
+      "href": "./US_HI.json",
+      "type": "application/geo+json",
+      "title": "United States — Hawaii"
+    },
+    {
+      "rel": "item",
+      "href": "./US_IA.json",
+      "type": "application/geo+json",
+      "title": "United States — Iowa"
+    },
+    {
+      "rel": "item",
+      "href": "./US_ID.json",
+      "type": "application/geo+json",
+      "title": "United States — Idaho"
+    },
+    {
+      "rel": "item",
+      "href": "./US_IL.json",
+      "type": "application/geo+json",
+      "title": "United States — Illinois"
+    },
+    {
+      "rel": "item",
+      "href": "./US_IN.json",
+      "type": "application/geo+json",
+      "title": "United States — Indiana"
+    },
+    {
+      "rel": "item",
+      "href": "./US_KS.json",
+      "type": "application/geo+json",
+      "title": "United States — Kansas"
+    },
+    {
+      "rel": "item",
+      "href": "./US_KY.json",
+      "type": "application/geo+json",
+      "title": "United States — Kentucky"
+    },
+    {
+      "rel": "item",
+      "href": "./US_LA.json",
+      "type": "application/geo+json",
+      "title": "United States — Louisiana"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MA.json",
+      "type": "application/geo+json",
+      "title": "United States — Massachusetts"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MB.json",
+      "type": "application/geo+json",
+      "title": "US_MB"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MD.json",
+      "type": "application/geo+json",
+      "title": "United States — Maryland"
+    },
+    {
+      "rel": "item",
+      "href": "./US_ME.json",
+      "type": "application/geo+json",
+      "title": "United States — Maine"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MI.json",
+      "type": "application/geo+json",
+      "title": "United States — Michigan"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MN.json",
+      "type": "application/geo+json",
+      "title": "United States — Minnesota"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MO.json",
+      "type": "application/geo+json",
+      "title": "United States — Missouri"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MS.json",
+      "type": "application/geo+json",
+      "title": "United States — Mississippi"
+    },
+    {
+      "rel": "item",
+      "href": "./US_MT.json",
+      "type": "application/geo+json",
+      "title": "United States — Montana"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NB.json",
+      "type": "application/geo+json",
+      "title": "US_NB"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NC.json",
+      "type": "application/geo+json",
+      "title": "United States — North Carolina"
+    },
+    {
+      "rel": "item",
+      "href": "./US_ND.json",
+      "type": "application/geo+json",
+      "title": "United States — North Dakota"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NE.json",
+      "type": "application/geo+json",
+      "title": "United States — Nebraska"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NH.json",
+      "type": "application/geo+json",
+      "title": "United States — New Hampshire"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NJ.json",
+      "type": "application/geo+json",
+      "title": "United States — New Jersey"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NM.json",
+      "type": "application/geo+json",
+      "title": "United States — New Mexico"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NV.json",
+      "type": "application/geo+json",
+      "title": "United States — Nevada"
+    },
+    {
+      "rel": "item",
+      "href": "./US_NY.json",
+      "type": "application/geo+json",
+      "title": "United States — New York"
+    },
+    {
+      "rel": "item",
+      "href": "./US_OH.json",
+      "type": "application/geo+json",
+      "title": "United States — Ohio"
+    },
+    {
+      "rel": "item",
+      "href": "./US_OK.json",
+      "type": "application/geo+json",
+      "title": "United States — Oklahoma"
+    },
+    {
+      "rel": "item",
+      "href": "./US_OR.json",
+      "type": "application/geo+json",
+      "title": "United States — Oregon"
+    },
+    {
+      "rel": "item",
+      "href": "./US_PA.json",
+      "type": "application/geo+json",
+      "title": "United States — Pennsylvania"
+    },
+    {
+      "rel": "item",
+      "href": "./US_QC.json",
+      "type": "application/geo+json",
+      "title": "US_QC"
+    },
+    {
+      "rel": "item",
+      "href": "./US_RI.json",
+      "type": "application/geo+json",
+      "title": "United States — Rhode Island"
+    },
+    {
+      "rel": "item",
+      "href": "./US_SC.json",
+      "type": "application/geo+json",
+      "title": "United States — South Carolina"
+    },
+    {
+      "rel": "item",
+      "href": "./US_SD.json",
+      "type": "application/geo+json",
+      "title": "United States — South Dakota"
+    },
+    {
+      "rel": "item",
+      "href": "./US_SK.json",
+      "type": "application/geo+json",
+      "title": "US_SK"
+    },
+    {
+      "rel": "item",
+      "href": "./US_SON.json",
+      "type": "application/geo+json",
+      "title": "US_SON"
+    },
+    {
+      "rel": "item",
+      "href": "./US_TN.json",
+      "type": "application/geo+json",
+      "title": "United States — Tennessee"
+    },
+    {
+      "rel": "item",
+      "href": "./US_TX.json",
+      "type": "application/geo+json",
+      "title": "United States — Texas"
+    },
+    {
+      "rel": "item",
+      "href": "./US_UT.json",
+      "type": "application/geo+json",
+      "title": "United States — Utah"
+    },
+    {
+      "rel": "item",
+      "href": "./US_VA.json",
+      "type": "application/geo+json",
+      "title": "United States — Virginia"
+    },
+    {
+      "rel": "item",
+      "href": "./US_VT.json",
+      "type": "application/geo+json",
+      "title": "United States — Vermont"
+    },
+    {
+      "rel": "item",
+      "href": "./US_WA.json",
+      "type": "application/geo+json",
+      "title": "United States — Washington"
+    },
+    {
+      "rel": "item",
+      "href": "./US_WI.json",
+      "type": "application/geo+json",
+      "title": "United States — Wisconsin"
+    },
+    {
+      "rel": "item",
+      "href": "./US_WV.json",
+      "type": "application/geo+json",
+      "title": "United States — West Virginia"
+    },
+    {
+      "rel": "item",
+      "href": "./US_WY.json",
+      "type": "application/geo+json",
+      "title": "United States — Wyoming"
+    },
+    {
+      "rel": "item",
+      "href": "./US_YT.json",
+      "type": "application/geo+json",
+      "title": "US_YT"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Guidance for AI agents"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Human-readable documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
+  ],
+  "updated": "2026-09-03T22:46:37Z"
+}

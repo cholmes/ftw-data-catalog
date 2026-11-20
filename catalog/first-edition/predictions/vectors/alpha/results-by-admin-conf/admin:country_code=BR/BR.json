@@ -1,0 +1,100 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "id": "BR",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -75.8427793,
+          -34.8873537
+        ],
+        [
+          -32.2634187,
+          -34.8873537
+        ],
+        [
+          -32.2634187,
+          6.8984081
+        ],
+        [
+          -75.8427793,
+          6.8984081
+        ],
+        [
+          -75.8427793,
+          -34.8873537
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -75.8427793,
+    -34.8873537,
+    -32.2634187,
+    6.8984081
+  ],
+  "properties": {
+    "title": "Brazil — country-wide tiled overview",
+    "description": "Country-wide tiled overview of the Brazil field-boundary predictions: all 55,500,520 field polygons from the BR_* partitions in one multi-scale PMTiles archive. Zooms 0–8 carry an `aggregate` layer of A5 grid cells (resolution 5 at z0–5, resolution 8 at z6–8) with per-cell rollups: `count`, `sum_area`, `avg_area`, `max_area`, `avg_perimeter` (m²/m, from `metrics:*`), per-year counts (`count_2024`, `count_2025`) and per-subdivision counts (`count_<code>`). From z9 a `features` layer carries the individual field polygons (properties: `id`, `area`, `perimeter`, `state`, `year`) through z13. Built with geoparquet-io (A5 aggregation) and tylertoo (tiling); cell rollups are exact sums, not thinned samples.",
+    "datetime": null,
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2025-12-31T23:59:59Z",
+    "admin:country_code": "BR",
+    "proj:code": "EPSG:3857"
+  },
+  "collection": "vectors",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../../../../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "collection",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ],
+  "assets": {
+    "pmtiles": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=BR/BR.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Brazil — country-wide field tiles (A5 aggregates z0–8, fields z9–13)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 7468315534,
+      "file:checksum": "1220445b65c1460cd556f5f9e75f7a7bf9b0c003dfb33c980c28fc420999080d91cf",
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Brazil — country-wide field tiles (A5 aggregates z0–8, fields z9–13)."
+    },
+    "style": {
+      "href": "./BR.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field density → boundaries",
+      "roles": [
+        "style"
+      ],
+      "file:size": 1449,
+      "file:checksum": "12203c0ee7c522174648ed0ce5aede8f720d61a02e54adc8bd24b19eb96586feef63",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field density → boundaries."
+    }
+  }
+}

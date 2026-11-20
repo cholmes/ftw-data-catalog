@@ -6,8 +6,8 @@ data on S3 via relative hrefs; countries split into multiple parquets get a
 country sub-catalog. Each item carries an overview description, `table:columns`
 (field definitions with spec links; the full `confidence` derivation lives there),
 a per-year MapLibre style, a README, and a `derived_from` link to the prediction
-Zarr. The collection adds a Portolan glob `data` asset, two collection PMTiles, and
-the MapLibre styles.
+Zarr. The collection adds an s3:// `partition:glob` over all admin partitions
+(PORTO-FMT-064), two collection PMTiles, and the MapLibre styles.
 
 Pure builders (bbox_to_polygon / title_for / build_item / build_collection) are
 unit-tested. The CLI reads each parquet's bbox + row count (+ confidence stats from
@@ -39,11 +39,34 @@ PROJ_EXT = "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
 VECTOR_EXT = "https://stac-extensions.github.io/vector/v0.1.0/schema.json"
 WEBMAP_EXT = "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
 TABLE_EXT = "https://stac-extensions.github.io/table/v1.2.0/schema.json"
-PARTITION_EXT = "https://portolan-sdi.github.io/stac-partition-extension/v1.0.0/schema.json"
+# Matches the URI rashid resolves, and what the committed collection.json
+# already declares; not the github.io form this constant used to hold (fixed
+# alongside scripts/migrate/upgrade_to_0_3.py — see PORTO-FMT-064).
+PARTITION_EXT = "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json"
 # The Portolan profile this catalog declares. It is the *sole* conformance signal,
 # so emitting it here keeps a regeneration from silently dropping it (which is
 # exactly what happened once — see scripts/migrate/upgrade_to_0_2.py).
-PORTOLAN_EXT = "https://schemas.portolan-sdi.org/portolan/v0.2.0/schema.json"
+PORTOLAN_EXT = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
+# The Source Cooperative data proxy (https://docs.source.coop/data-proxy):
+# same bucket/keys as PUBLIC_BASE/COLLECTION_HREF, reached as if it were an
+# S3 bucket named after the account. Verified live (2026-11-20): anonymous
+# ListObjectsV2 against https://data.source.coop/ftw?list-type=2&prefix=...
+# and a DuckDB glob() through ENDPOINT 'data.source.coop' both matched the
+# same 598 partitions this generator emits items for. partition:glob MUST use
+# a bucket-native, listable scheme (PORTO-FMT-064); a data asset's href MUST
+# NOT contain a glob (PORTO-FMT-065), so the glob lives only in
+# partition:glob, never in `assets`. Not an AWS bucket (PORTO-FMT-066), so
+# STORAGE_SCHEME below is declared alongside it.
+S3_BASE = "s3://ftw/global-data"
+STORAGE_EXT = "https://stac-extensions.github.io/storage/v2.0.0/schema.json"
+STORAGE_SCHEME = {
+    "type": "custom-s3",
+    "title": "Source Cooperative data proxy (anonymous read)",
+    "platform": "https://data.source.coop",
+    "bucket": "ftw",
+    "region": "us-west-2",
+    "requester_pays": False,
+}
 
 # Field-definition specs (linked in each column description + via `describedby`).
 FIBOA_CORE = "https://github.com/fiboa/specification/blob/main/core/README.md"
@@ -381,7 +404,7 @@ def build_collection(item_links, child_links):
         "type": "Collection",
         "stac_version": "1.1.0",
         "stac_extensions": [PORTOLAN_EXT, PROJ_EXT, VECTOR_EXT, TABLE_EXT, SCI_EXT,
-                            PARTITION_EXT],
+                            PARTITION_EXT, STORAGE_EXT],
         # the Portolan browser reads this list to populate the style picker
         "portolan:styles": ["styles/2025", "styles/2024",
                             "styles/confidence-2025", "styles/confidence-2024"],
@@ -421,15 +444,16 @@ def build_collection(item_links, child_links):
         "table:columns": TABLE_COLUMNS,
         "partition:scheme": "hive",
         "partition:keys": [{"name": "admin:country_code", "type": "string"}],
+        # PORTO-FMT-064: absolute, bucket-native, listable scheme — not the
+        # https:// COLLECTION_HREF form, which a client can't list to expand.
+        "partition:glob": f"{S3_BASE}/{DATA_REL}/admin:country_code=*/*.parquet",
+        # PORTO-FMT-066: s3://ftw is the data proxy, not a real AWS bucket.
+        "storage:schemes": {"ftw-proxy": STORAGE_SCHEME},
         "links": links,
         "assets": {
-            "data": {
-                "href": f"./{DATA_REL}/admin:country_code=*/*.parquet",
-                "type": "application/vnd.apache.parquet",
-                "title": "Field-boundary polygons, partitioned by country (GeoParquet glob)",
-                "description": "Portolan glob over all admin (country) partitions.",
-                "roles": ["data"],
-            },
+            # No `data` asset here: PORTO-FMT-065 forbids a glob in an asset
+            # href, and partition:glob above is the primary-data reference
+            # (PORTO-CORE-082) for this partitioned collection.
             "pmtiles_2025": {
                 "href": PMTILES_2025,
                 "type": "application/vnd.pmtiles",

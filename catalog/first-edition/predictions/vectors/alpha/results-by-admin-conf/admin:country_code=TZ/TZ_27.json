@@ -1,0 +1,219 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "id": "TZ_27",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          31.15110596744241,
+          -4.479366312130011
+        ],
+        [
+          34.73195719009081,
+          -4.479366312130011
+        ],
+        [
+          34.73195719009081,
+          -1.0338008739708084
+        ],
+        [
+          31.15110596744241,
+          -1.0338008739708084
+        ],
+        [
+          31.15110596744241,
+          -4.479366312130011
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    31.15110596744241,
+    -4.479366312130011,
+    34.73195719009081,
+    -1.0338008739708084
+  ],
+  "properties": {
+    "title": "Tanzania, United Republic of — Geita",
+    "description": "Agricultural field boundaries for Tanzania, United Republic of — Geita. Part of [Fields of the World](https://fieldsofthe.world) — agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. This partition contains 3,915,732 field polygons. A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing. Columns: id, geometry, bbox, metrics:area, metrics:perimeter, determination:datetime, determination:method, admin:country_code, admin:subdivision_code, confidence — see `table:columns` for definitions (including how `confidence` is derived).",
+    "datetime": null,
+    "start_datetime": "2024-01-01T00:00:00Z",
+    "end_datetime": "2025-12-31T23:59:59Z",
+    "admin:country_code": "TZ",
+    "proj:code": "EPSG:4326",
+    "geoparquet:geometry_type": "Polygon",
+    "geoparquet:feature_count": 3915732,
+    "table:columns": [
+      {
+        "name": "id",
+        "type": "string",
+        "description": "An identifier for the field. Must be unique per collection. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "geometry",
+        "type": "binary",
+        "description": "A geometry that reflects the footprint of the field, usually a Polygon. Default CRS is WGS84. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "bbox",
+        "type": "struct",
+        "description": "The bounding box of the field. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "metrics:area",
+        "type": "float",
+        "description": "Area of the field, in square meters (m²). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "metrics:perimeter",
+        "type": "float",
+        "description": "Perimeter of the field, in meters (m). Must be > 0. ([vecorel geometry-metrics](https://github.com/vecorel/geometry-metrics-extension))"
+      },
+      {
+        "name": "determination:datetime",
+        "type": "timestamp",
+        "description": "The last timestamp at which the field did exist and was observed, in the UTC timezone. ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "determination:method",
+        "type": "string",
+        "description": "The boundary creation method (one of: manual, surveyed, driven, auto-operation, auto-imagery, unknown). ([fiboa core](https://github.com/fiboa/specification/blob/main/core/README.md))"
+      },
+      {
+        "name": "admin:country_code",
+        "type": "string",
+        "description": "ISO 3166-1 alpha-2 country code (aka admin0). Two-letter country code for the country that contains the field. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "admin:subdivision_code",
+        "type": "string",
+        "description": "ISO 3166-2 code for the principal subdivision (e.g. province or state, aka admin1) of a country that contains the field. Only the subdivision part of the code is stored. ([vecorel administrative-division](https://github.com/vecorel/administrative-division-extension))"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "description": "Derived; not part of the upstream model output. Modeled PRUE confidence on a 0–100 scale, sampled at the field's point-on-surface from the 500 m confidence COG ([predictions/confidence](https://data.source.coop/ftw/global-data/predictions/confidence/collection.json)) and rescaled `raw / 0.578178 * 100`, clamped to 100 (0.578178 is treated as 100%, matching the FTW inference app; this centroid sample is the closest single value to the app's `confidence_mean`); **null where the field falls outside the modeled-confidence layer's coverage — i.e. no value there, not a low score** (the layer is sparse and conservative, fully covering mainly the 24 FTW-labelled training countries). Recommended reliability filter: `confidence >= 69` (raw 0.4). Reflects 500 m cell-level model reliability, not individual-polygon geometric accuracy. Generated by [add_confidence.py](https://github.com/fieldsoftheworld/ftw-data-catalog/blob/main/scripts/confidence/add_confidence.py) (+ process_partition.sh, run_rails.sh, make_pmtiles.py)."
+      }
+    ],
+    "portolan:styles": [
+      "style-2025",
+      "style-2024",
+      "style-confidence-2025",
+      "style-confidence-2024"
+    ]
+  },
+  "collection": "vectors",
+  "assets": {
+    "data": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_27.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Tanzania, United Republic of — Geita field boundaries (GeoParquet)",
+      "roles": [
+        "data"
+      ],
+      "description": "GeoParquet field-boundary polygons for this partition (3,915,732 features). See the collection's `table:columns` for field definitions."
+    },
+    "pmtiles": {
+      "href": "https://data.source.coop/ftw/global-data/predictions/vectors/alpha/results-by-admin-conf/admin:country_code=TZ/TZ_27.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Tanzania, United Republic of — Geita field boundaries (PMTiles, 2024/2025 layers)",
+      "roles": [
+        "visual"
+      ],
+      "description": "PMTiles vector tiles for rendering in MapLibre GL. Tanzania, United Republic of — Geita field boundaries (PMTiles, 2024/2025 layers)."
+    },
+    "style-2025": {
+      "href": "./TZ_27.2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 899,
+      "file:checksum": "12202ff69ba683bfe6e7a29cd5d986468d757d7d665d0a2fd30de1aed1258ffbaf55",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2025)."
+    },
+    "style-2024": {
+      "href": "./TZ_27.2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — field boundaries (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 899,
+      "file:checksum": "1220ea7956800795bc13479f74ede80e52fd8828e721667915f1ebd4ddd31e1dd9ce",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — field boundaries (2024)."
+    },
+    "style-confidence-2025": {
+      "href": "./TZ_27.confidence-2025.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2025)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2643,
+      "file:checksum": "1220d3319cc5b3456972f89d9c63d98eddfe7572ec3faa56248c917624b699bd4a01",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2025)."
+    },
+    "style-confidence-2024": {
+      "href": "./TZ_27.confidence-2024.style.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "MapLibre style — by confidence (2024)",
+      "roles": [
+        "style"
+      ],
+      "file:size": 2643,
+      "file:checksum": "12206f4d4c3feacdda015149339113e22382b8364f77eb906e37a7c22ac22c05c4d6",
+      "description": "MapLibre GL style (JSON) for rendering: MapLibre style — by confidence (2024)."
+    },
+    "README": {
+      "href": "./TZ_27.README.md",
+      "type": "text/markdown",
+      "title": "Tanzania, United Republic of — Geita — README",
+      "roles": [
+        "metadata"
+      ],
+      "file:size": 4451,
+      "file:checksum": "122012c72cd388d89782f79723ec49dc5a1f8465437c0f4b59906e0f4ca2f309af0f",
+      "description": "Human-readable documentation. Tanzania, United Republic of — Geita — README."
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../../../../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "collection",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "derived_from",
+      "href": "https://data.source.coop/ftw/global-data/predictions/zarr/collection.json",
+      "type": "application/json",
+      "title": "FTW prediction probabilities (Zarr)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ]
+}

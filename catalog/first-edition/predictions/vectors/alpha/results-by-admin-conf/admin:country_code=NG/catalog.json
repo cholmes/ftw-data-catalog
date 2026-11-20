@@ -1,0 +1,341 @@
+{
+  "type": "Catalog",
+  "stac_version": "1.1.0",
+  "id": "vectors-NG",
+  "title": "Nigeria — field boundary predictions",
+  "description": "Field-boundary predictions for Nigeria, split into 49 admin-subdivision partitions. Part of [Fields of the World](https://fieldsofthe.world) — agricultural field boundaries delineated by the PRUE model from Sentinel-2 imagery. A GeoParquet vector dataset is derived from the [prediction Zarr](https://data.source.coop/ftw/global-data/predictions/zarr/collection.json) by thresholding the softmax outputs for [non_field_background, field, field_boundaries] at 0.5 and polygonizing.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../../../../catalog.json",
+      "type": "application/json",
+      "title": "Fields of the World"
+    },
+    {
+      "rel": "parent",
+      "href": "../../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "derived_from",
+      "href": "https://data.source.coop/ftw/global-data/predictions/zarr/collection.json",
+      "type": "application/json",
+      "title": "FTW prediction probabilities (Zarr)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_2.json",
+      "type": "application/geo+json",
+      "title": "NG_2"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_3.json",
+      "type": "application/geo+json",
+      "title": "NG_3"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_4.json",
+      "type": "application/geo+json",
+      "title": "NG_4"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_5.json",
+      "type": "application/geo+json",
+      "title": "NG_5"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_7.json",
+      "type": "application/geo+json",
+      "title": "NG_7"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_AB.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Abia"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_AD.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Adamawa"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_AK.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Akwa Ibom"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_AL.json",
+      "type": "application/geo+json",
+      "title": "NG_AL"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_AN.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Anambra"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_BA.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Bauchi"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_BE.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Benue"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_BO.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Borno"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_BY.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Bayelsa"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_CO.json",
+      "type": "application/geo+json",
+      "title": "NG_CO"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_CR.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Cross River"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_DE.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Delta"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_EB.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Ebonyi"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_ED.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Edo"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_EK.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Ekiti"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_EN.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Enugu"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_FC.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Abuja Federal Capital Territory"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_GO.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Gombe"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_IM.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Imo"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_JI.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Jigawa"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_KD.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Kaduna"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_KE.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Kebbi"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_KN.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Kano"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_KO.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Kogi"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_KT.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Katsina"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_KW.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Kwara"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_LA.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Lagos"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_LC.json",
+      "type": "application/geo+json",
+      "title": "NG_LC"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_NA.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Nasarawa"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_NI.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Niger"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_NO.json",
+      "type": "application/geo+json",
+      "title": "NG_NO"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_NW.json",
+      "type": "application/geo+json",
+      "title": "NG_NW"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_OG.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Ogun"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_ON.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Ondo"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_OS.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Osun"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_OU.json",
+      "type": "application/geo+json",
+      "title": "NG_OU"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_OY.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Oyo"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_PL.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Plateau"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_RI.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Rivers"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_SO.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Sokoto"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_SW.json",
+      "type": "application/geo+json",
+      "title": "NG_SW"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_TA.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Taraba"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_YO.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Yobe"
+    },
+    {
+      "rel": "item",
+      "href": "./NG_ZA.json",
+      "type": "application/geo+json",
+      "title": "Nigeria — Zamfara"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Guidance for AI agents"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Human-readable documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
+  ],
+  "updated": "2026-09-03T22:46:37Z"
+}

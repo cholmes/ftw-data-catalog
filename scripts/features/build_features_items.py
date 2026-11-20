@@ -944,7 +944,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("collections"); c.add_argument(
-        "--out", default=str(Path(__file__).resolve().parents[2] / "catalog"))
+        "--out", default=str(Path(__file__).resolve().parents[2] / "catalog" / "first-edition"))
     it = sub.add_parser("items"); it.add_argument("year", type=int, choices=[2024, 2025])
     it.add_argument("--workdir", default=os.environ.get("WORK", "/tmp/ftw-features"))
     it.add_argument("--limit", type=int, default=None)
